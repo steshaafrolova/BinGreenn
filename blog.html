@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BinGreen</title>
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="libs/btn/anim-menu-btn.min.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="js/app.js" defer></script>
+  <style>
+    .scroll-item {
+      margin-top: 100px; /* Увеличиваем отступ сверху, чтобы избежать наложения */
+    }
+
+    body {
+      margin: 0;
+      font-family: "Jost", sans-serif;
+      background-color: #f9f9f9;
+      padding-top: 130px; /* Учитывая высоту навигации */
+    }
+    .scroll-item a {
+      position: relative;
+      z-index: 10;
+    }
+    .scroll-item-img {
+      pointer-events: auto;
+    }
+
+    .blog-section {
+      padding: 40px 15px;
+      background-color: #f5f5f5;
+    }
+
+    /* Контейнер для карточек */
+    .articles-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between; /* Равномерное распределение карточек */
+    }
+
+    /* Стиль каждой карточки */
+    .scroll-item {
+      flex: 1 1 30%; /* 30% для трех карточек в ряду */
+      margin-bottom: 20px; /* Отступ снизу */
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+    .scroll-item:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Стиль для изображения */
+    .scroll-item-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease; /* Плавный эффект при наведении */
+    }
+
+    .scroll-item:hover .scroll-item-img {
+      transform: translateY(-10px);
+    }
+
+    .scroll-item-description {
+      padding: 15px;
+    }
+
+    .scroll-item-description h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .scroll-item-description p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+    }
+    /* Медиазапрос для мобильных устройств */
+    @media (max-width: 768px) {
+      .scroll-item {
+        flex: 1 1 45%; /* 2 карточки в ряду */
+      }
+
+      .scroll-item-img {
+        height: 180px; /* Меньше высота изображения на мобильных */
+      }
+    }
+
+    /* Медиазапрос для очень маленьких экранов */
+    @media (max-width: 480px) {
+      .scroll-item {
+        flex: 1 1 100%; /* 1 карточка в ряду */
+        margin-bottom: 15px; /* Уменьшенный отступ снизу */
+      }
+
+      .scroll-item-img {
+        height: 150px; /* Еще меньше высота изображения */
+      }
+    }
+  </style>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <img src="html/img/slides/logo_prozrach.png" alt="Logo" />
+          </a>
+        </div>
+        <!-- Navigation -->
+        <nav class="nav" id="nav">
+          <ul class="nav-items">
+            <li class="nav-item">
+              <a href="index.html">Головна</a>
+            </li>
+            <li class="nav-item">
+              <a href="#">
+                Про нас
+                <span class="arrow"></span>
+              </a>
+              <div class="dropdown">
+                <div class="dropdown-card">
+                  <ul>
+                    <li><a href="history.html">Історія</a></li>
+                    <li><a href="pictures.html">Стратегія</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#about">
+                Закупівля
+                <span class="arrow"></span>
+              </a>
+              <div class="dropdown">
+                <div class="dropdown-card">
+                  <ul>
+                    <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+                    <li><a href="question.html">Питання та відповіді</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#services">
+                Стати партнером
+                <span class="arrow"></span>
+              </a>
+              <div class="dropdown">
+                <div class="dropdown-card">
+                  <ul>
+                    <li><a href="what.html">Що приймаємо?</a></li>
+                    <li><a href="risheny.html">Рішення для організацій</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#services">
+                Контакти
+                <span class="arrow"></span>
+              </a>
+              <div class="dropdown">
+                <div class="dropdown-card">
+                  <ul>
+                    <li><a href="adress.html">Адреса та контакти</a></li>
+                    <li><a href="tg-bot.html">Telegram-Бот</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="blog.html" class="active">Блог</a>
+            </li>
+          </ul>
+
+          <!-- social-icons and Telegram button container -->
+          <div class="social-icons-container">
+            <div class="social-icons">
+              <a
+                href="https://www.instagram.com/bingreen.ua/"
+                target="_blank"
+                class="icon"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4"
+                target="_blank"
+                class="icon"
+              >
+                <i class="fab fa-telegram"></i>
+              </a>
+              <a href="mailto:example@mail.com" target="_blank" class="icon">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv"
+                target="_blank"
+                class="icon"
+              >
+                <i class="fab fa-tiktok"></i>
+              </a>
+              <a href="https://www.whatsapp.com" target="_blank" class="icon">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/share/1YLa7XBRcP/?mibextid=wwXIfr"
+                target="_blank"
+                class="icon"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+            <a
+              href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4"
+              target="_blank"
+              class="learn-more-btn-v"
+            >
+              <i class="fab fa-telegram"></i> Наш Telegram-Бот
+            </a>
+          </div>
+        </nav>
+
+        <!-- Mobile menu (burger) -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop">↑</button>
+    <!-- Blog Articles -->
+    <section class="blog-section">
+      <!-- Заголовок секции -->
+      <div class="blog-header">
+        <h2 class="stats-header-blog">Наш блог</h2>
+        <p class="stats-subheader">
+          Зробимо світ чистішим разом! Читайте про важливість вторсировини та як
+          вона допомагає зберегти ресурси планети.
+        </p>
+      </div>
+
+      <!-- Контейнер с карточками -->
+      <div class="blog-content">
+        <div class="articles-container">
+          <div class="scroll-item fade-in">
+            <a href="1page.html">
+              <img
+                src="/img/images/pererabotka-makulatu.jpg"
+                alt="Article 1"
+                class="scroll-item-img"
+              />
+              <div class="scroll-item-description">
+                <h3>
+                  Як вторсировина може змінити майбутнє: відходи, що приносять
+                  користь
+                </h3>
+                <p>
+                  Як переробка відходів може змінити наше майбутнє, перетворюючи
+                  їх на корисні ресурси.
+                </p>
+                <p class="article-date">Дата: 20.12.2024</p>
+              </div>
+            </a>
+          </div>
+          <div class="scroll-item fade-in">
+            <a href="page2.html">
+              <img
+                src="/img/images/plastik2.webp"
+                alt="Article 2"
+                class="scroll-item-img"
+              />
+              <div class="scroll-item-description">
+                <h3>
+                  5 найкращих способів переробки пластикових відходів у нові
+                  продукти
+                </h3>
+                <p>
+                  Дізнайтеся про 5 найкращих способів переробки пластикових
+                  відходів і їх перетворення в корисні товари.
+                </p>
+                <p class="article-date">Дата: 21.12.2024</p>
+              </div>
+            </a>
+          </div>
+          <div class="scroll-item fade-in">
+            <a href="page3.html">
+              <img
+                src="/blogimg/page3/64947a520229194a8bd71906_NORBA001.jpg"
+                alt="Article 3"
+                class="scroll-item-img"
+              />
+              <div class="scroll-item-description">
+                <h3>NORBA</h3>
+                <p>
+                  Український бренд спідньої білизни, який випустив лінійку
+                  купальників з переробленого морського пластику. Тканина має
+                  італійське походження, а самі вироби відшиваються в Україні.
+                </p>
+                <p class="article-date">Дата: 21.12.2024</p>
+              </div>
+            </a>
+          </div>
+          <div class="scroll-item fade-in">
+            <a href="snikers.html">
+              <img
+                src="/blogimg/crossblog/1d5c3b700c99096d9089c22df1549346.jpg"
+                alt="Article 4"
+                class="scroll-item-img"
+              />
+              <div class="scroll-item-description">
+                <h3>
+                  Переробка вторсировини та створення екологічних кросівок
+                </h3>
+                <p>Як відходи стають модними трендами.</p>
+                <p class="article-date">Дата: 21.12.2024</p>
+              </div>
+            </a>
+          </div>
+          <div class="scroll-item fade-in">
+            <a href="page5.html">
+              <img
+                src="/img/images/sychasnyi.jpg"
+                alt="Article 5"
+                class="scroll-item-img"
+              />
+              <div class="scroll-item-description">
+                <h3>
+                  Екологічні інновації у переробці: як новітні технології
+                  змінюють індустрію вторсировини
+                </h3>
+                <p>
+                  Як нові технології у переробці відходів відкривають нові
+                  можливості для бізнесу та екології.
+                </p>
+                <p class="article-date">Дата: 22.12.2024</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="scroll-item fade-in">
+            <a href="page6.html">
+              <img
+                src="/img/images/electroni.jpg"
+                alt="Article 6"
+                class="scroll-item-img"
+              />
+              <div class="scroll-item-description">
+                <h3>
+                  Переробка електронних відходів: виклики та можливості для
+                  сучасних технологій
+                </h3>
+                <p>
+                  Як переробка електронних відходів відкриває нові можливості
+                  для технологій та охорони навколишнього середовища.
+                </p>
+                <p class="article-date">Дата: 27.12.2024</p>
+              </div>
+            </a>
+          </div>
+          <div class="scroll-item fade-in">
+            <a href="page7.html">
+              <img
+                src="/img/images/recycl.jpg"
+                alt="Article 7"
+                class="scroll-item-img"
+              />
+              <div class="scroll-item-description">
+                <h3>
+                  10 фактів про вторсировину, які змінять ваше ставлення до
+                  відходів
+                </h3>
+                <p>
+                  10 фактів про вторсировину, які змінять ваше ставлення до
+                  відходів і їх цінності.
+                </p>
+                <p class="article-date">Дата: 28.12.2024</p>
+              </div>
+            </a>
+          </div>
+          <div class="scroll-item fade-in">
+            <a href="page8.html">
+              <img
+                src="/img/images/pricol.jpg"
+                alt="Article 8"
+                class="scroll-item-img"
+              />
+              <div class="scroll-item-description">
+                <h3>
+                  Кругова економіка: чому переробка вторсировини має бути
+                  пріоритетом для бізнесу
+                </h3>
+                <p>
+                  Чому переробка вторсировини повинна стати пріоритетом для
+                  бізнес-стратегій у рамках кругової економіки.
+                </p>
+                <p class="article-date">Дата: 28.12.2024</p>
+              </div>
+            </a>
+          </div>
+          <div class="scroll-item">
+            <a href="page9.html">
+              <img
+                src="/img/images/building.webp"
+                alt="Article 9"
+                class="scroll-item-img"
+              />
+              <div class="scroll-item-description">
+                <h3>
+                  Вторсировина у будівництві: переваги використання перероблених
+                  матеріалів
+                </h3>
+                <p>
+                  Перероблені матеріали у будівництві: як вони допомагають
+                  заощаджувати ресурси та зменшувати шкоду для природи.
+                </p>
+                <p class="article-date">Дата: 28.12.2024</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <a href="index.html"
+            ><img src="/img/slides/logo_prozrach.png" alt="BinGreen Logo"
+          /></a>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Про нас</h3>
+          <ul class="footer-list">
+            <li><a href="history.html">Історія</a></li>
+            <li><a href="pictures.html">Стратегія</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="tg-bot.html">Телеграм-бот</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Закупівля</h3>
+          <ul class="footer-list">
+            <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+            <li><a href="what.html">Що ми приймаємо</a></li>
+            <li><a href="question.html">Питання та відповіді</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Контакти</h3>
+          <div class="footer-contacts">
+            <p>
+              <a href="tel:+380993505353" class="contact-link"
+                >+38 (099) 350-53-53</a
+              >
+            </p>
+            <p>
+              <a href="tel:+380983505353" class="contact-link"
+                >+38 (098) 350-53-53</a
+              >
+            </p>
+            <p>
+              <a href="tel:+380733505353" class="contact-link"
+                >+38 (073) 350-53-53</a
+              >
+            </p>
+            <p>
+              <a href="mailto:bingreenua53@gmail.com" class="contact-link"
+                >bingreenua53@gmail.com</a
+              >
+            </p>
+            <p>
+              <a
+                href="https://www.google.com/maps?q=вулиця+Богуна,+6,+Нікополь"
+                target="_blank"
+                class="contact-link"
+              >
+                вулиця Богуна, 6, Нікополь
+              </a>
+            </p>
+            <p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=м.+Нікополь,Марганець,Покров,Україна"
+                target="_blank"
+                class="contact-link"
+              >
+                м. Нікополь, Марганець, Покров, Україна
+              </a>
+            </p>
+          </div>
+
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/profile.php?id=61563220245958&mibextid=wwXIfr&rdid=THVLzDF8ZNkzgwss&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1YLa7XBRcP%2F%3Fmibextid%3DwwXIfr"
+              class="social-icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv"
+              class="social-icon"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+            <a href="https://www.instagram.com/bingreen.ua/" class="social-icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4"
+              class="social-icon"
+              ><i class="fa-brands fa-telegram"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-viber"></i
+            ></a>
+            <a href="mailto:bingreenua53@gmail.com" class="social-icon"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-separator"></div>
+      <!-- line-->
+      <div class="footer-bottom">
+        <p>&copy; 2024 BinGreen. Всі права захищені.</p>
+      </div>
+    </footer>
+  </body>
+  <script>
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+
+    // Listen for the scroll event and log the event data
+    lenis.on("scroll", (e) => {
+      console.log(e);
+    });
+    // button back
+    document.addEventListener("DOMContentLoaded", function () {
+      const backToTopButton = document.getElementById("backToTop");
+      let lastScrollPosition = 0;
+
+      window.addEventListener("scroll", () => {
+        const currentScroll =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > 100) {
+          if (currentScroll < lastScrollPosition) {
+            backToTopButton.classList.add("show");
+            backToTopButton.classList.remove("hide");
+          } else {
+            backToTopButton.classList.add("hide");
+            backToTopButton.classList.remove("show");
+          }
+        } else {
+          backToTopButton.classList.remove("show");
+          backToTopButton.classList.add("hide");
+        }
+
+        lastScrollPosition = currentScroll;
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+    // Navigation
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+
+      if (window.scrollY > 50) {
+        navbar.style.background = "rgba(255, 255, 255, 0.699)"; // Используем #5cba49 с прозрачностью
+        navbar.style.borderRadius = "100px";
+        navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.4)";
+        navbar.style.padding = "10px 20px";
+        navbar.style.transition = "all 0.3s ease";
+      } else {
+        navbar.style.background = "transparent"; // Прозрачный фон
+        navbar.style.borderRadius = "0";
+        navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.3)";
+        navbar.style.padding = "20px 20px";
+        navbar.style.transition = "all 0.3s ease";
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav");
+      const navItems = document.querySelectorAll(".nav-item");
+
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+
+      // Управление подменю на мобильных
+      navItems.forEach((item) => {
+        const dropdown = item.querySelector(".dropdown");
+
+        if (dropdown) {
+          const link = item.querySelector("a");
+
+          link.addEventListener("click", (e) => {
+            if (window.innerWidth < 769) {
+              e.preventDefault();
+              item.classList.toggle("open");
+            }
+          });
+        }
+      });
+    });
+    document
+      .querySelector(".scroll-button")
+      .addEventListener("click", function () {
+        window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+      });
+  </script>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+     <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIN GREEN</title>
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script> 
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="libs/btn/anim-menu-btn.min.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+<style>
+    .blog-header {
+  position: relative;
+  background-image: url('img/images/nav-photoaidcom-darken.jpeg'); 
+  background-size: cover;
+  background-position: center top; 
+  background-repeat: no-repeat; 
+  padding: 80px 20px;
+  color: white; 
+  text-align: center;
+}
+
+.blog-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 1; 
+}
+
+.blog-header h2,
+.blog-header p {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.blog-section {
+  margin-top: 40px; 
+}
+
+.blog-header h2 {
+    color: white;
+  font-size: 3em; 
+  margin: 0; 
+  z-index: 2; 
+}
+
+.blog-header p {
+    color: white;
+  font-size: 1.2em; 
+  z-index: 2; 
+}
+
+.blog-section {
+  margin-top: 40px; 
+}
+body {
+  margin: 0;
+  font-family: "Jost", sans-serif;
+  padding-top: 176px; 
+}
+.navbar {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  z-index: 1000; 
+  padding: 20px;
+}
+
+/* Навигационные ссылки */
+.navbar .nav-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+}
+.step-section__title {
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #4CAF50;
+  text-align: center;
+}
+</style>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="js/class.js" defer></script>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <img src="html/img/slides/logo_prozrach.png" alt="Logo" />
+        </a>
+      </div>
+   <!-- Navigation -->
+   <nav class="nav" id="nav">
+    <ul class="nav-items">
+      <li class="nav-item">
+        <a href="index.html">Головна</a>
+      </li>
+      <li class="nav-item">
+        <a href="#">
+          Про нас
+          <span class="arrow"></span>
+        </a>
+        <div class="dropdown">
+          <div class="dropdown-card">
+            <ul>
+              <li><a href="history.html">Історія</a></li>
+              <li><a href="pictures.html">Стратегія</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#about">
+          Закупівля
+          <span class="arrow"></span>
+        </a>
+        <div class="dropdown">
+          <div class="dropdown-card">
+            <ul>
+              <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+              <li><a href="question.html">Питання та відповіді</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#services">
+          Стати партнером
+          <span class="arrow"></span>
+        </a>
+        <div class="dropdown">
+          <div class="dropdown-card">
+            <ul>
+              <li><a href="what.html">Що приймаємо?</a></li>
+              <li><a href="risheny.html">Рішення для організацій</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#services">
+          Контакти
+          <span class="arrow"></span>
+        </a>
+        <div class="dropdown">
+          <div class="dropdown-card">
+            <ul>
+              <li><a href="adress.html">Адреса та контакти</a></li>
+              <li><a href="tg-bot.html">Telegram-Бот</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="blog.html">Блог</a>
+      </li>
+    </ul>
+
+    <!-- social-icons and Telegram button container -->
+    <div class="social-icons-container">
+      <div class="social-icons">
+        <a
+          href="https://www.instagram.com/bingreen.ua/"
+          target="_blank"
+          class="icon"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4"
+          target="_blank"
+          class="icon"
+        >
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="mailto:example@mail.com" target="_blank" class="icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a
+          href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv"
+          target="_blank"
+          class="icon"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.whatsapp.com" target="_blank" class="icon">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/share/1YLa7XBRcP/?mibextid=wwXIfr"
+          target="_blank"
+          class="icon"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+      <a
+        href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4"
+        target="_blank"
+        class="learn-more-btn-v"
+      >
+        <i class="fab fa-telegram"></i> Наш Telegram-Бот
+      </a>
+    </div>
+  </nav>
+      <!-- Mobile menu (burger) -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+  <!-- Стрелка "наверх" -->
+  <button class="back-to-top" id="backToTop">↑</button>
+<!-- questions -->
+<div class="blog-header">
+    <h2 class="stats-header-blog">
+     Питання та відповіді
+    </h2>
+    
+  </div>
+</section>
+<h2 class="step-section__title">Залишились питання?</h2>
+<p class="stats-subheader">
+ Компанія BinGreen підготували відповіді для вас.
+</p>
+        <section class="faq-section">
+            <div class="faq-container">
+              <div class="faq-item">
+                <button class="faq-question">
+                  Що таке BinGreen і чим ми займаємося?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>BinGreen — це компанія, яка спеціалізується на прийомі, сортуванні та переробці вторинної сировини, допомагаючи зменшити кількість відходів на планеті.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чому важливо здавати вторсировину на переробку?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Це допомагає зменшити навантаження на сміттєзвалища, зберегти природні ресурси та зменшити викиди парникових газів.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Які матеріали ви приймаєте?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p><a href="prodaty.html" style="color: #4caf50; text-decoration: underline;">Пластик</a>, <a href="prodaty.html" style="color: #4caf50; text-decoration: underline;">папір</a>, <a href="prodaty.html" style="color: #4caf50; text-decoration: underline;">картон</a>, <a href="prodaty.html" style="color: #4caf50; text-decoration: underline;">метал</a>, <a href="prodaty.html" style="color: #4caf50; text-decoration: underline;">скло</a>, <a href="prodaty.html" style="color: #4caf50; text-decoration: underline;">текстиль</a>, <a href="prodaty.html" style="color: #4caf50; text-decoration: underline;">електронні відходи</a>, <a href="prodaty.html" style="color: #4caf50; text-decoration: underline;">батарейки</a> та інші матеріали, що підлягають переробці.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Які матеріали не приймаються?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Ми не приймаємо медичні відходи, будівельне сміття, органічні відходи та небезпечні хімікати.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи потрібна попередня сортування сировини?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Так, ми рекомендуємо сортувати сировину за категоріями: пластик, папір, метал тощо.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи оплачується сировина?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>За певні види сировини, наприклад метал чи папір, ви отримуєте компенсацію.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Як розраховується вартість сировини?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Вартість залежить від ваги матеріалу та його ринкової ціни на момент здачі.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи є мінімальна кількість для здачі сировини?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Мінімальний обсяг залежить від типу матеріалу. Наприклад, для пластику це 1 кг.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Де знайти ваші пункти прийому?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Список пунктів прийому доступний на нашому сайті або в Telegram-боті.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Як дізнатися про графік роботи пункту прийому?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Ми працюємо з 9:00 до 17:00. Якщо у вас є велика кількість сировини, ми можемо приїхати, забрати її та одразу виплатити компенсацію.</p>
+                </div>
+              </div>              
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи приймаєте ви пляшки з кришечками?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Так, але кришечки слід знімати й здавати окремо.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи можна здати сировину в пошкодженому стані?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Так, ми приймаємо матеріали незалежно від їхнього вигляду, якщо вони підлягають переробці.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи можна здати великі обсяги сировини?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Так, для великих обсягів ми пропонуємо спеціальні умови співпраці.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи працюєте ви з юридичними особами?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Так, ми співпрацюємо з компаніями, офісами, магазинами та підприємствами.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи є у вас доставка контейнерів для збору вторсировини?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Так, ми можемо надати контейнери для зручного збору сировини.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Як замовити послугу вивозу сировини?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Замовлення можна оформити через наш Telegram-бот.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи можу я отримати звіт про перероблену сировину?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Так, ми надаємо звіти для наших партнерів і постійних клієнтів в <a href="https://www.instagram.com/bingreen.ua/" target="_blank" style="color: #4caf50; text-decoration: underline;">Instagram</a>.</p>
+                </div>
+              </div>
+              
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи можу я здати поліетиленові пакети?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Так, ми приймаємо поліетиленові пакети для переробки.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Що станеться з моїми матеріалами після здачі?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Ваша сировина буде відправлена на підприємства, які спеціалізуються на її переробці.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Як дізнатися, чи підлягає матеріал переробці?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Ви можете скористатися нашим Telegram-ботом, отримати консультацію в пункті прийому або переглянути детальну інформацію на нашій <a href="what.html" style="color: #4caf50; text-decoration: underline;">сторінці</a>.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи приймаєте ви лампочки або батарейки?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Так, ми приймаємо ці категорії для безпечної утилізації.Це соціальна ініціатива від BinGreen</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">
+                  Чи потрібно попередньо мити матеріали перед здачею?
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Так, ми просимо очищати сировину від залишків їжі чи інших забруднень.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+<!-- footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+      <div class="footer-logo">
+          <a href="index.html"><img src="/img/slides/logo_prozrach.png" alt="BinGreen Logo"></a>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-title">Про нас</h3>
+        <ul class="footer-list">
+            <li><a href="history.html">Історія</a></li>
+            <li><a href="pictures.html">Стратегія</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="tg-bot.html">Телеграм-бот</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3 class="footer-title">Закупівля</h3>
+        <ul class="footer-list">
+            <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+            <li><a href="what.html">Що ми приймаємо</a></li>
+            <li><a href="question.html">Питання та відповіді</a></li>
+
+        </ul>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-title">Контакти</h3>
+      <div class="footer-contacts">
+        <p><a href="tel:+380993505353" class="contact-link">+38 (099) 350-53-53</a></p>
+        <p><a href="tel:+380983505353" class="contact-link">+38 (098) 350-53-53</a></p>
+        <p><a href="tel:+380733505353" class="contact-link">+38 (073) 350-53-53</a></p>
+        <p><a href="mailto:bingreenua53@gmail.com" class="contact-link">bingreenua53@gmail.com</a></p>
+        <p><a href="https://www.google.com/maps?q=вулиця+Богуна,+6,+Нікополь" target="_blank" class="contact-link">
+          вулиця Богуна, 6, Нікополь
+      </a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=м.+Нікополь,Марганець,Покров,Україна" target="_blank" class="contact-link">
+            м. Нікополь, Марганець, Покров, Україна
+        </a></p>
+    </div>
+        
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61563220245958&mibextid=wwXIfr&rdid=THVLzDF8ZNkzgwss&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1YLa7XBRcP%2F%3Fmibextid%3DwwXIfr" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/bingreen.ua/" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-viber"></i></a>
+      <a href="mailto:bingreenua53@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+  </div>
+      </div>
+  </div>
+  <div class="footer-separator"></div> <!-- line-->
+  <div class="footer-bottom">
+      <p>&copy; 2024 BinGreen. Всі права захищені.</p>
+  </div>
+</footer>
+  <script>
+    // Navigation
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+
+  if (window.scrollY > 50) {
+    navbar.style.background = "rgba(255, 255, 255, 0.699)"; // Используем #5cba49 с прозрачностью
+    navbar.style.borderRadius = "100px";
+    navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.4)";
+    navbar.style.padding = "10px 20px";
+    navbar.style.transition = "all 0.3s ease";
+  } else {
+    navbar.style.background = "transparent"; // Прозрачный фон
+    navbar.style.borderRadius = "0";
+    navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.3)";
+    navbar.style.padding = "20px 20px";
+    navbar.style.transition = "all 0.3s ease";
+  }
+});
+    document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    const question1 = item.querySelector(".faq-question-1");
+    const question2 = item.querySelector(".faq-question-2");
+
+    const toggleActiveState = () => {
+      // Закрыть все остальные элементы
+      faqItems.forEach((el) => {
+        if (el !== item) el.classList.remove("active");
+      });
+
+      item.classList.toggle("active");
+    };
+
+    if (question) {
+      question.addEventListener("click", toggleActiveState);
+    } 
+   if (question1) {
+      question1.addEventListener("click", toggleActiveState);
+    }
+
+    if (question2) {
+      question2.addEventListener("click", toggleActiveState);
+    }
+  });
+});
+
+  </script>
+</html>

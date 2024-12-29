@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+     <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BinGreen</title>
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script> 
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="libs/btn/anim-menu-btn.min.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="js/class.js" defer></script>
+  <style>
+  /* Стиль для навигации */
+.navbar {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  z-index: 1000; 
+  background-color: rgba(255, 255, 255, 0.9); 
+  padding: 20px;
+}
+
+/* Навигационные ссылки */
+.navbar .nav-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+}
+.blog-header {
+  position: relative;
+  background-image: url('img/images/nav-photoaidcom-darken.jpeg'); 
+  background-size: cover;
+  background-position: center top; 
+  background-repeat: no-repeat; 
+  padding: 80px 20px;
+  text-align: center;
+}
+.sorting-rules__title {
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px; /* Отступ от заголовка до шагов */
+  color: #4CAF50; /* Цвет заголовка */
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between; /* Равномерное распределение шагов по горизонтали */
+  gap: 30px; /* Расстояние между шагами */
+  margin: 40px 0;
+  text-align: center; /* Центрируем текст */
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем содержимое шагов */
+  gap: 10px; /* Расстояние между кругом, заголовком и текстом */
+}
+
+.step__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: #4CAF50; /* Цвет круга */
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%; /* Делаем круг */
+  margin-bottom: 10px; /* Отступ между кругом и заголовком */
+}
+
+.step__title {
+  font-family: "Jost", sans-serif;
+  font-size: 1.8rem;
+  color: #4CAF50;
+  font-weight: 600;
+  margin: 0;
+}
+
+.step__description {
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  max-width: 300px; /* Ограничиваем ширину текста */
+}
+
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    color: #4caf50;
+}
+.step-section {
+  text-align: center;
+  margin: 60px 0;
+  padding: 0 20px; /* Добавляем отступы сбоку для всей секции */
+}
+
+.step-section__title {
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #4CAF50;
+}
+
+.step-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto; /* Центрируем сетку */
+  max-width: 1200px; /* Ограничиваем ширину сетки */
+}
+
+.step-card {
+  background-color: #f4f4f4;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавная анимация */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* Высота карточки */
+  margin: 0 10px; /* Добавляем отступы между карточками */
+}
+
+.step-card:hover {
+  transform: translateY(-10px); /* Поднимаем карточку вверх при наведении */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень при наведении */
+}
+
+.step-card__content {
+  text-align: center;
+}
+
+.step-card__title {
+  font-family: "Jost", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.step-card__description {
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 768px) {
+  .step-section__grid {
+    grid-template-columns: 1fr; /* На мобильных устройствах делаем один столбец */
+  }
+
+  .step-card {
+    height: auto; /* Автоматическая высота на мобильных устройствах */
+    margin: 10px 0; /* Отступы сверху и снизу для карточек */
+  }
+}
+.step-section-4 {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.step-section-4__title {
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #4CAF50;
+}
+
+.step-section-4__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.faq-question-1 {
+  font-family: "Jost", sans-serif;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 15px;
+  text-align: left;
+  font-size: 30px; /* Аналог размера текста вопроса */
+  font-weight: 500;
+  color: #f69207;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.faq-question-2 {
+  font-family: "Jost", sans-serif;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 15px;
+  text-align: left;
+  font-size: 30px; /* Аналог размера текста вопроса */
+  font-weight: 500;
+  color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.stats-header-blog {
+  color: white;
+}
+/* Основные стили */
+.sorting-table {
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Стили таблицы */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  color: #4CAF50;
+  border: 1px solid #4CAF50;
+}
+
+th {
+  background-color: #ddd;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+td {
+  background-color: #fff;
+}
+
+td:empty {
+  background-color: #4CAF50;
+}
+
+/* Иконки для статуса */
+td:nth-child(2):before {
+  content: '♻️';
+  font-size: 1.5rem;
+}
+
+td:nth-child(3):before {
+  content: '⚡';
+  font-size: 1.5rem;
+}
+
+td:nth-child(4):before {
+  content: '⛔';
+  font-size: 1.5rem;
+}
+.faq-answer {
+  font-size: 1.2rem; /* Увеличиваем размер текста */
+  line-height: 1.6; /* Увеличиваем межстрочный интервал */
+}
+
+.faq-answer p {
+    color: #333;
+  font-weight: bold;
+}
+
+.faq-answer ul {
+    color: #333;
+  list-style-type: disc; /* Добавляем маркеры в виде точек */
+  margin-left: 20px; /* Отступ для маркеров */
+}
+
+.faq-answer li {
+    color: #333;
+  margin-bottom: 10px; /* Отступ между пунктами */
+}
+.main-title {
+      font-size: calc(var(--index) * 2.5);
+      position: absolute;
+      color: green;
+      width: min-content;
+      bottom: 12vh;
+      left: 10%; /* Перемещает текст левее */
+      line-height: 0.9;
+    }
+    .center-text-block {
+      position: relative;
+      color: black;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .center-text-block__h,
+    .center-text-block__p {
+      margin: 0;
+      width: 100%;
+      color: black;
+      max-width: none; /* Убираем ограничение по ширине */
+      display: block; /* Стандартный блочный элемент */
+      white-space: nowrap; /* Запрещаем перенос строк */
+      overflow: hidden; /* Прячем текст, если он выходит за пределы */
+      text-overflow: ellipsis; /* Добавляем многоточие, если текст слишком длинный */
+      opacity: 0;
+      transform: translateY(50px);
+      animation: slideIn 1.5s ease-out forwards;
+    }
+
+    .center-text-block__h {
+      animation-delay: 0.2s;
+    }
+
+    .center-text-block__p {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .center-text-block {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.center-text-block__h {
+  margin: 0;
+  font-size: 6rem; /* Очень большой размер шрифта для заголовка */
+  font-weight: bold;
+  color: #333; /* Цвет заголовка */
+  opacity: 0; /* Начальная прозрачность */
+  transform: translateY(50px); /* Начальная позиция, чтобы элементы сдвигались вверх */
+  animation: fadeIn 1.5s ease-out forwards; /* Добавляем анимацию */
+  line-height: 1.2; /* Меньший интервал между строками */
+}
+.new-content h3 {
+    font-size: 4rem;
+    color: green;
+    animation-delay: 0.2s;}
+.center-text-block__h {
+  animation-delay: 0.2s; /* Задержка для заголовка */
+}
+
+.center-text-block__p {
+  font-size: 1.25rem; 
+  color: green;
+  line-height: 1.6;
+  opacity: 0; /* Начальная прозрачность */
+  transform: translateY(50px); 
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: 0.4s; /* Задержка для параграфа */
+}
+.new-content p {
+    font-size: 1.25rem;
+    color: green;
+    animation-delay: 0.4s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.new-content {
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.new-content h3, .new-content p {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.new-content h3 {
+  font-size: 4rem; 
+  animation-delay: 0.2s;
+}
+
+.new-content p {
+  font-size: 1.25rem;
+  animation-delay: 0.4s;
+}
+.new-content {
+  margin: 30px auto;
+  max-width: 1000px;
+  padding: 40px;
+  color: #4CAF50;
+  font-family: "Jost", sans-serif;
+  line-height: 1.8;
+}
+
+.new-content h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.new-content p {
+  font-size: 1.2rem;
+  text-align: justify;
+  color: #4CAF50;
+}
+
+.new-content ul {
+  padding-left: 25px;
+}
+
+.new-content ul li {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .new-content {
+    padding: 20px;
+  }
+
+  .new-content h3 {
+    font-size: 2rem;
+  }
+
+  .new-content p, .new-content ul li {
+    font-size: 1.1rem;
+  }
+}
+.image-container {
+  display: flex; 
+  justify-content: space-around;
+  gap: 20px; 
+  margin-bottom: 20px; 
+}
+
+.rounded-image {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px; 
+  transition: transform 0.3s ease; 
+}
+
+.rounded-image:hover {
+  transform: scale(1.1); 
+}
+#map {
+      height: 500px;
+      width: 80%;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+        .steps {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .step {
+          align-items: center;
+          text-align: center;
+        }
+
+        .step__circle {
+          width: 60px;
+          height: 60px;
+          font-size: 1.2rem;
+        }
+
+        .step__title {
+          font-size: 1.5rem;
+        }
+
+        .step__description {
+          font-size: 0.9rem;
+          max-width: 100%;
+        }
+      }
+</style>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <img src="html/img/slides/logo_prozrach.png" alt="Logo" />
+          </a>
+        </div>
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <ul class="nav-items">
+    <li class="nav-item">
+      <a href="index.html">Головна</a>
+    </li>
+    <li class="nav-item">
+      <a href="#">
+        Про нас
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="history.html">Історія</a></li>
+            <li><a href="pictures.html">Стратегія</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#about">
+        Закупівля
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+            <li><a href="question.html">Питання та відповіді</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#services">
+        Стати партнером
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="what.html">Що приймаємо?</a></li>
+            <li><a href="risheny.html">Рішення для організацій</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#services">
+        Контакти
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="adress.html">Адреса та контакти</a></li>
+            <li><a href="tg-bot.html">Telegram-Бот</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="blog.html">Блог</a>
+    </li>
+  </ul>
+
+  <!-- social-icons and Telegram button container -->
+  <div class="social-icons-container">
+    <div class="social-icons">
+      <a
+        href="https://www.instagram.com/bingreen.ua/"
+        target="_blank"
+        class="icon"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a
+        href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4"
+        target="_blank"
+        class="icon"
+      >
+        <i class="fab fa-telegram"></i>
+      </a>
+      <a href="mailto:example@mail.com" target="_blank" class="icon">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a
+        href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv"
+        target="_blank"
+        class="icon"
+      >
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.whatsapp.com" target="_blank" class="icon">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a
+        href="https://www.facebook.com/share/1YLa7XBRcP/?mibextid=wwXIfr"
+        target="_blank"
+        class="icon"
+      >
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+    <a
+      href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4"
+      target="_blank"
+      class="learn-more-btn-v"
+    >
+      <i class="fab fa-telegram"></i> Наш Telegram-Бот
+    </a>
+  </div>
+</nav>
+        <!-- Mobile menu (burger) -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop">↑</button>
+  <!-- Blog Articles -->
+<section class="blog-section">
+    <!-- Заголовок секции -->
+    <div class="blog-header">
+      <h2 class="stats-header-blog">
+      Пункти прийому
+      </h2>
+      
+    </div>
+  </section>
+  <div class="new-content ">
+    <h3>Пункти прийому вторсировини компанії</h3>
+    <p>Пункти прийому вторинної сировини — це важливий елемент сучасної системи переробки відходів. Вони допомагають зберегти природні ресурси, зменшити кількість сміття на полігонах і сприяють екологічній свідомості суспільства. У таких пунктах кожен може здати папір, пластик, скло та інші матеріали, які підлягають повторному використанню. Це не лише крок до чистішого довкілля, а й можливість зробити свій внесок у збереження планети для майбутніх поколінь. Обираючи пункти прийому, ви підтримуєте екологічний рух та сприяєте розвитку відповідального ставлення до природи.</p>
+    <p>Ефективне управління відходами є важливим завданням для кожного міста, зокрема для таких промислових центрів, як Марганець, Нікополь та Покров. Ми прагнемо зробити ці міста чистішими, екологічно безпечними та комфортними для життя завдяки сучасним підходам до сортування, збору та переробки вторинної сировини.
+    </p>
+    <div class="new-content ">
+        <h3>Наші адреси:</h3>
+         <div id="map" style="height: 500px; width: 100%; margin: 0 auto;"></div> 
+    <section class="sorting-rules">
+        <h1 class="sorting-rules__title">Як це працює?</h1>
+        <div class="steps">
+          <div class="step">
+            <div class="step__circle">1</div>
+            <h2 class="step__title">Сортування вдома</h2>
+            <p class="step__description">
+                Перед тим як здати відходи, ви можете відсортувати їх за категоріями: пластик, скло, папір, метал. Це значно полегшує роботу пунктів прийому.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__circle">2</div>
+            <h2 class="step__title">Доставка до пункту прийому</h2>
+            <p class="step__description">
+                Принесіть відходи до найближчого пункту прийому або скористайтеся послугою самовивозу для великих обсягів.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__circle">3</div>
+            <h2 class="step__title">Оцінка та зважування</h2>
+            <p class="step__description">
+                Відходи зважуються та оцінюються на місці, після чого розраховується компенсація або видаються купони на знижки.
+            </p>
+          </div>
+        </div>
+      </section>
+  </div>
+</div>  
+<div class="new-content fade-in">
+    <h3>Сортування відходів у містах Марганець, Нікополь і Покров:</h3>
+    <h3>Марганець</h3>
+    <p>Марганець — місто з багатою промисловою історією та динамічним життям. Тут впровадження систем роздільного збору відходів є важливим кроком на шляху до збереження довкілля.
+  <br>      Наші ініціативи включають:</p>
+    <ul>
+      <li><strong>Розміщення контейнерів для роздільного збору пластику, скла, паперу та металу у багатолюдних районах.</li>
+      <li><strong>Відкриття приймальних пунктів, де мешканці можуть здати вторинну сировину та отримати винагороду.</li>
+      <li><strong>Проведення освітніх кампаній, які навчають жителів сортувати відходи правильно.</li>
+    </ul>
+  </div>
+  <div class="image-container">
+    <img src="/img/images/mn.jpg" alt="Environmentally friendly materials" class="rounded-image">
+    <img src="/img/images/mn2.jpg" alt="Recycling process" class="rounded-image">
+    <img src="/img/images/mmn3.jpg" alt="Recycling process" class="rounded-image">
+  </div>
+  <div class="new-content fade-in">
+    <h3>Нікополь</h3>
+    <p>Нікополь є одним із найбільших центрів регіону, що активно розвивається. Велика кількість населення потребує чіткої стратегії поводження з відходами.
+  <br>      Наш підхід до покращення ситуації:</p>
+    <ul>
+      <li><strong>Організація мобільних пунктів збору, які допомагають зручно здавати вторинну сировину безпосередньо у мікрорайонах міста.</li>
+      <li><strong>Співпраця з місцевими підприємствами для утилізації промислових відходів, що сприяє збереженню природи та зниженню ризику забруднення.</li>
+      <li><strong>Інтеграція сучасних технологій переробки відходів, які дозволяють мінімізувати кількість сміття на полігонах.</li>
+    </ul>
+  </div>
+  <div class="image-container">
+    <img src="/img/images/nk.jpg" alt="Environmentally friendly materials" class="rounded-image">
+    <img src="/img/images/nk2" alt="Recycling process" class="rounded-image">
+    <img src="/img/images/nk3" alt="Recycling process" class="rounded-image">
+  </div>
+  <div class="new-content fade-in">
+    <h3>Покров</h3>
+    <p>Покров відомий своєю активною громадою та любов'ю до чистоти. Ми підтримуємо екологічні ініціативи міста, спрямовані на розвиток культури утилізації.<br>Що ми пропонуємо:</p>
+    <ul>
+      <li><strong>Створення локальних центрів для обміну вторинною сировиною на корисні товари або винагороди.</li>
+      <li><strong>Розширення мережі пунктів прийому сировини, щоб зробити утилізацію доступнішою для кожного.</li>
+      <li><strong>Реалізація соціальних проєктів для молоді, які формують екологічну свідомість і стимулюють участь у збереженні природи.</li>
+    </ul>
+  </div>
+  <div class="image-container">
+    <img src="/img/images/pokrov1.jpg" alt="Environmentally friendly materials" class="rounded-image">
+    <img src="/img/images/pokriv2.jpg" alt="Recycling process" class="rounded-image">
+    <img src="/img/images/pokrov3.jpg" alt="Recycling process" class="rounded-image">
+  </div>
+<section class="stats-section ">
+    <h2 class="stats-header">Ми закуповуємо сировину!</h2>
+    <p class="stats-subheader">
+      Ми закуповуємо папір, пластик, плівку та метал за наявності мінімального обсягу відсортованої фракції. Приєднуйтесь до нас та зробимо переробку разом!
+    </p>
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-image-container">
+          <img src="/img/images/makul2.webp" alt="Папір" class="stat-image">
+          <img src="/img/images/makulatura.jpeg" alt="Папір" class="stat-image-hover">
+        </div>
+        <h3 class="stat-value">Папір</h3>
+        <p class="stat-description">
+          Ми приймаємо відсортований папір у великих обсягах для переробки та повторного використання.
+        </p>
+        <a href="whitepaper.html">
+          <!-- button more information -->
+          <button class="learn-more-btn">Більше інформації</button>
+        </a> 
+      </div>
+      <div class="stat-item">
+        <div class="stat-image-container">
+          <img src="img/images/plastik1.webp" alt="Пластик" class="stat-image">
+          <img src="img/images/plastik2.webp" alt="Пластик" class="stat-image-hover">
+        </div>
+        <h3 class="stat-value">Пластик</h3>
+        <p class="stat-description">
+          Пластикові відходи після сортування та очищення можуть бути використані для створення нових продуктів.
+        </p>
+        <a href="botles.html">
+          <!-- button more information -->
+          <button class="learn-more-btn">Більше інформації</button>
+        </a> 
+      </div>
+    
+      <div class="stat-item">
+        <div class="stat-image-container">
+          <img src="/img/images/metallchik.jpg" alt="Метал" class="stat-image">
+          <img src="/img/images/metal2.jpg" alt="Метал" class="stat-image-hover">
+        </div>
+        <h3 class="stat-value">Метал</h3>
+        <p class="stat-description">
+          Ми закуповуємо метал для переробки, що дозволяє значно зменшити навантаження на природні ресурси.
+        </p>
+        <a href="banka.html">
+          <!-- button more information -->
+          <button class="learn-more-btn">Більше інформації</button>
+        </a>  
+      </div>
+    </div>
+    <!-- Button for scrolling -->
+    <a href="prodaty.html" class="scroll-button">Дізнатися більше</a>
+  </section>
+<section class="services-section ">
+    <h2 class="section-header">Переваги</h2>
+    <div class="services-container">
+      <!--Екологічна свідомість-->
+      <div class="service-card">
+        <div class="service-content">
+          <img src="img/images/checkmark.png" alt="Утилізація" class="service-image">
+          <div class="service-info">
+            <h3>Екологічна свідомість</h3>
+            <p>Використовуючи пункти прийому, ви допомагаєте зменшити кількість відходів, які потрапляють на звалища. Це сприяє захисту природи та скороченню викидів шкідливих речовин у навколишнє середовище.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Збереження ресурсів -->
+      <div class="service-card ">
+        <div class="service-content">
+          <img src="/img/images/checkmark.png" alt="Пункти прийому" class="service-image">
+          <div class="service-info">
+            <h3>Збереження ресурсів</h3>
+            <p>Переробка матеріалів, таких як пластик, скло, метал і папір, дозволяє зберігати природні ресурси, які використовуються для створення нових продуктів.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Фінансова вигода -->
+      <div class="service-card ">
+        <div class="service-content">
+          <img src="/img/images/checkmark.png" alt="Фінансова вигода" class="service-image">
+          <div class="service-info">
+            <h3>Фінансова вигода</h3>
+            <p>Здаючи вторсировину, ви можете отримати фінансову винагороду. Це стимулює багатьох людей брати участь у процесі сортування та переробки відходів.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Комфорт і доступність -->
+      <div class="service-card ">
+        <div class="service-content">
+          <img src="/img/images/checkmark.png" alt="Комфорт і доступність" class="service-image">
+          <div class="service-info">
+            <h3>Комфорт і доступність</h3>
+            <p>Сучасні пункти прийому облаштовані таким чином, щоб ви могли зручно здати будь-які матеріали. Багато з них оснащені сучасним обладнанням для сортування та автоматизації процесу.</p>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </section>
+  <div class="new-content ">
+    <h3>Наша мета</h3>
+    <p>Ми працюємо для того, щоб міста Марганець, Нікополь і Покров стали прикладом екологічно свідомих спільнот. Завдяки впровадженню наших інноваційних рішень, кожен мешканець може долучитися до процесу утилізації, зробивши свій внесок у збереження природи.
+
+        Разом ми можемо створити чисте та екологічно стале майбутнє для наступних поколінь!
+        </p>
+  </div>
+  <!-- footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+      <div class="footer-logo">
+          <a href="index.html"><img src="/img/slides/logo_prozrach.png" alt="BinGreen Logo"></a>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-title">Про нас</h3>
+        <ul class="footer-list">
+            <li><a href="history.html">Історія</a></li>
+            <li><a href="pictures.html">Стратегія</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="tg-bot.html">Телеграм-бот</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3 class="footer-title">Закупівля</h3>
+        <ul class="footer-list">
+            <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+            <li><a href="what.html">Що ми приймаємо</a></li>
+            <li><a href="question.html">Питання та відповіді</a></li>
+
+        </ul>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-title">Контакти</h3>
+      <div class="footer-contacts">
+        <p><a href="tel:+380993505353" class="contact-link">+38 (099) 350-53-53</a></p>
+        <p><a href="tel:+380983505353" class="contact-link">+38 (098) 350-53-53</a></p>
+        <p><a href="tel:+380733505353" class="contact-link">+38 (073) 350-53-53</a></p>
+        <p><a href="mailto:bingreenua53@gmail.com" class="contact-link">bingreenua53@gmail.com</a></p>
+        <p><a href="https://www.google.com/maps?q=вулиця+Богуна,+6,+Нікополь" target="_blank" class="contact-link">
+          вулиця Богуна, 6, Нікополь
+      </a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=м.+Нікополь,Марганець,Покров,Україна" target="_blank" class="contact-link">
+            м. Нікополь, Марганець, Покров, Україна
+        </a></p>
+    </div>
+        
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61563220245958&mibextid=wwXIfr&rdid=THVLzDF8ZNkzgwss&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1YLa7XBRcP%2F%3Fmibextid%3DwwXIfr" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/bingreen.ua/" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-viber"></i></a>
+      <a href="mailto:bingreenua53@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+  </div>
+      </div>
+  </div>
+  <div class="footer-separator"></div> <!-- line-->
+  <div class="footer-bottom">
+      <p>&copy; 2024 BinGreen. Всі права захищені.</p>
+  </div>
+</footer>
+  </body>
+</html>
+  <script>
+    // Navigation
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+
+  if (window.scrollY > 50) {
+    navbar.style.background = "rgba(255, 255, 255, 0.699)"; // Используем #5cba49 с прозрачностью
+    navbar.style.borderRadius = "100px";
+    navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.4)";
+    navbar.style.padding = "10px 20px";
+    navbar.style.transition = "all 0.3s ease";
+  } else {
+    navbar.style.background = "transparent"; // Прозрачный фон
+    navbar.style.borderRadius = "0";
+    navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.3)";
+    navbar.style.padding = "20px 20px";
+    navbar.style.transition = "all 0.3s ease";
+  }
+});
+  // Ініціалізація карти
+  const map = L.map('map').setView([47.5615, 34.3948], 13);
+  // Координати Києва
+
+  // Додати тайли карти (OpenStreetMap)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Додати маркери для пунктів прийому
+  const points = [
+    { coords: [47.568548, 34.388157], name: 'Пункт прийому 1' },
+    { coords: [47.568569, 34.386458], name: 'Пункт прийому 2' },
+    { coords: [47.562975, 34.393607], name: 'Пункт прийому 3' }
+  ];
+
+  points.forEach(point => {
+    L.marker(point.coords).addTo(map).bindPopup(`<b>${point.name}</b>`);
+  });
+  </script>
+</body>
+</html>

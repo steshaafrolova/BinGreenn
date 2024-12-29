@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+     <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BinGreen</title>
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script> 
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="libs/btn/anim-menu-btn.min.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="js/class.js" defer></script>
+  <style>
+  /* Стиль для навигации */
+.navbar {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  z-index: 1000; 
+  background-color: rgba(255, 255, 255, 0.9); 
+  padding: 20px;
+}
+
+/* Навигационные ссылки */
+.navbar .nav-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+}
+.blog-header {
+  position: relative;
+  background-image: url('img/images/nav-photoaidcom-darken.jpeg'); 
+  background-size: cover;
+  background-position: center top; 
+  background-repeat: no-repeat; 
+  padding: 80px 20px;
+  text-align: center;
+}
+.sorting-rules__title {
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px; /* Отступ от заголовка до шагов */
+  color: #4CAF50; /* Цвет заголовка */
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between; /* Равномерное распределение шагов по горизонтали */
+  gap: 30px; /* Расстояние между шагами */
+  margin: 40px 0;
+  text-align: center; /* Центрируем текст */
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем содержимое шагов */
+  gap: 10px; /* Расстояние между кругом, заголовком и текстом */
+}
+
+.step__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: #4CAF50; /* Цвет круга */
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%; /* Делаем круг */
+  margin-bottom: 10px; /* Отступ между кругом и заголовком */
+}
+
+.step__title {
+  font-family: "Jost", sans-serif;
+  font-size: 1.8rem;
+  color: #4CAF50;
+  font-weight: 600;
+  margin: 0;
+}
+
+.step__description {
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  max-width: 300px; /* Ограничиваем ширину текста */
+}
+
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    color: #4caf50;
+}
+.step-section {
+  text-align: center;
+  margin: 60px 0;
+  padding: 0 20px; /* Добавляем отступы сбоку для всей секции */
+}
+
+.step-section__title {
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #4CAF50;
+}
+
+.step-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto; /* Центрируем сетку */
+  max-width: 1200px; /* Ограничиваем ширину сетки */
+}
+
+.step-card {
+  background-color: #f4f4f4;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавная анимация */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* Высота карточки */
+  margin: 0 10px; /* Добавляем отступы между карточками */
+}
+
+.step-card:hover {
+  transform: translateY(-10px); /* Поднимаем карточку вверх при наведении */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень при наведении */
+}
+
+.step-card__content {
+  text-align: center;
+}
+
+.step-card__title {
+  font-family: "Jost", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.step-card__description {
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 768px) {
+  .step-section__grid {
+    grid-template-columns: 1fr; /* На мобильных устройствах делаем один столбец */
+  }
+
+  .step-card {
+    height: auto; /* Автоматическая высота на мобильных устройствах */
+    margin: 10px 0; /* Отступы сверху и снизу для карточек */
+  }
+}
+.step-section-4 {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.step-section-4__title {
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #4CAF50;
+}
+
+.step-section-4__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.faq-question-1 {
+  font-family: "Jost", sans-serif;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 15px;
+  text-align: left;
+  font-size: 30px; /* Аналог размера текста вопроса */
+  font-weight: 500;
+  color: #f69207;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.faq-question-2 {
+  font-family: "Jost", sans-serif;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 15px;
+  text-align: left;
+  font-size: 30px; /* Аналог размера текста вопроса */
+  font-weight: 500;
+  color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.stats-header-blog {
+  color: white;
+}
+/* Основные стили */
+.sorting-table {
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Стили таблицы */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  color: #4CAF50;
+  border: 1px solid #4CAF50;
+}
+
+th {
+  background-color: #ddd;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+td {
+  background-color: #fff;
+}
+
+td:empty {
+  background-color: #4CAF50;
+}
+
+/* Иконки для статуса */
+td:nth-child(2):before {
+  content: '♻️';
+  font-size: 1.5rem;
+}
+
+td:nth-child(3):before {
+  content: '⚡';
+  font-size: 1.5rem;
+}
+
+td:nth-child(4):before {
+  content: '⛔';
+  font-size: 1.5rem;
+}
+.faq-answer {
+  font-size: 1.2rem; /* Увеличиваем размер текста */
+  line-height: 1.6; /* Увеличиваем межстрочный интервал */
+}
+
+.faq-answer p {
+    color: #333;
+  font-weight: bold;
+}
+
+.faq-answer ul {
+    color: #333;
+  list-style-type: disc; /* Добавляем маркеры в виде точек */
+  margin-left: 20px; /* Отступ для маркеров */
+}
+
+.faq-answer li {
+    color: #333;
+  margin-bottom: 10px; /* Отступ между пунктами */
+}
+.step-card {
+  background-color: #4CAF50; /* Зеленый фон */
+}
+
+.step-card__title {
+  color: white; /* Белые буквы */
+}
+.sorting-rules {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.sorting-rules__title {
+    font-size: 32px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; /* Добавим, чтобы шаги не выходили за пределы на маленьких экранах */
+}
+
+.step {
+    flex: 1;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 300px; /* Ограничиваем ширину шага */
+    margin: 10px;
+}
+
+.step__circle {
+    display: inline-block;
+    background-color: #4CAF50;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+
+.step__title {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.step__description {
+    font-size: 16px;
+    color: #555;
+    margin-top: 15px;
+}
+@media (max-width: 768px) {
+  .navbar .nav-items {
+    flex-direction: column; /* Переключаем навигацию в колонку */
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .navbar {
+    padding: 10px;
+  }
+
+  .sorting-rules__title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .steps {
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .step {
+    flex: 1;
+    width: 100%; /* Делаем шаги более гибкими */
+    max-width: none; /* Убираем ограничение на ширину */
+    margin-bottom: 20px;
+  }
+
+  .step__circle {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+
+  .step__title {
+    font-size: 1.5rem;
+  }
+
+  .step__description {
+    font-size: 1rem;
+  }
+
+  .step-section__grid {
+    grid-template-columns: 1fr; /* На мобильных устройствах сетка в 1 колонку */
+    gap: 20px;
+  }
+
+  .step-card {
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .step-card__title {
+    font-size: 1.2rem;
+  }
+
+  .step-card__description {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  thead th {
+    font-size: 0.9rem;
+  }
+
+  tbody td {
+    font-size: 0.9rem;
+  }
+
+  td:first-child {
+    font-size: 1rem;
+  }
+}
+</style>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <img src="html/img/slides/logo_prozrach.png" alt="Logo" />
+          </a>
+        </div>
+   <!-- Navigation -->
+   <nav class="nav" id="nav">
+    <ul class="nav-items">
+      <li class="nav-item">
+        <a href="index.html">Головна</a>
+      </li>
+      <li class="nav-item">
+        <a href="#">
+          Про нас
+          <span class="arrow"></span>
+        </a>
+        <div class="dropdown">
+          <div class="dropdown-card">
+            <ul>
+              <li><a href="history.html">Історія</a></li>
+              <li><a href="pictures.html">Стратегія</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#about">
+          Закупівля
+          <span class="arrow"></span>
+        </a>
+        <div class="dropdown">
+          <div class="dropdown-card">
+            <ul>
+              <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+              <li><a href="question.html">Питання та відповіді</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#services">
+          Стати партнером
+          <span class="arrow"></span>
+        </a>
+        <div class="dropdown">
+          <div class="dropdown-card">
+            <ul>
+              <li><a href="what.html">Що приймаємо?</a></li>
+              <li><a href="risheny.html">Рішення для організацій</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#services">
+          Контакти
+          <span class="arrow"></span>
+        </a>
+        <div class="dropdown">
+          <div class="dropdown-card">
+            <ul>
+              <li><a href="adress.html">Адреса та контакти</a></li>
+              <li><a href="tg-bot.html">Telegram-Бот</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="blog.html">Блог</a>
+      </li>
+    </ul>
+
+    <!-- social-icons and Telegram button container -->
+    <div class="social-icons-container">
+      <div class="social-icons">
+        <a
+          href="https://www.instagram.com/bingreen.ua/"
+          target="_blank"
+          class="icon"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4"
+          target="_blank"
+          class="icon"
+        >
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="mailto:example@mail.com" target="_blank" class="icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a
+          href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv"
+          target="_blank"
+          class="icon"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.whatsapp.com" target="_blank" class="icon">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/share/1YLa7XBRcP/?mibextid=wwXIfr"
+          target="_blank"
+          class="icon"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+      <a
+        href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4"
+        target="_blank"
+        class="learn-more-btn-v"
+      >
+        <i class="fab fa-telegram"></i> Наш Telegram-Бот
+      </a>
+    </div>
+  </nav>
+
+        <!-- Mobile menu (burger) -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop">↑</button>
+  <!-- Blog Articles -->
+<section class="blog-section">
+    <!-- Заголовок секции -->
+    <div class="blog-header">
+      <h2 class="stats-header-blog">
+        Що приймає BinGreen?
+      </h2>
+      
+    </div>
+  </section>
+  <section class="sorting-rules">
+    <h1 class="sorting-rules__title">Крок 1: Підготовка вторсировини<br>
+        починається з 3 базових правил</h1>
+    <div class="steps">
+      <div class="step">
+        <div class="step__circle">1</div>
+        <h2 class="step__title">Помий</h2>
+        <p class="step__description">
+            Вторсировина має бути чистою, без слідів їжі. Тому перед сортуванням обов'язково вимийте все з миючими засобами.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step__circle">2</div>
+        <h2 class="step__title">Висуши</h2>
+        <p class="step__description">
+            Вторсировина повинна бути сухою, тому після миття обов'язково добре висушіть її.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step__circle">3</div>
+        <h2 class="step__title">Стисни</h2>
+        <p class="step__description">
+            Вторсировина має бути стиснута, щоб зекономити місце при транспортуванні.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="step-section">
+    <h2 class="step-section__title">Крок 2: Враховуй важливі деталі при сортуванні.</h2>
+    <div class="step-section__grid">
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title">Пакети та плівки повинні бути без етикеток та зайвих елементів.</h3>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title">Пляшки повинні бути порожніми.</h3>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title">Картонні коробки мають бути розібрані і складені акуратно.</h3>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title">Пляшки з-під напоїв, молока, олії та упаковка тетрапак мають бути з закритими кришками.</h3>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title">Якщо етикетка з плівки покриває більшу частину пляшки, її слід зняти.</h3>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title">Не забудьте зняти або відірвати скотч, стікери, застібки та будь-які інші сторонні елементи.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="faq-section">
+    <h2 class="faq-header">Крок 3</h2>
+    <p class="stats-subheader">
+        Ознайомся з переліком сировини<br>
+        Ми розділяємо сировину на наступні види:
+    </p>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">
+            Ліквідна сировина
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Це сировина, що користується стабільним попитом у переробників, швидко накопичується, а ціни на неї достатні для покриття витрат на заготівлю та операційні витрати.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question-1">
+            Неліквідна сировина
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Це сировина, на який попит переробних підприємств є низьким або відсутнім, що повільно накопичується, а ціна продажу не покриває витрати на закупівлю. Переробка такої сировини потребує додаткових витрат з нашого боку або оплати послуг високотемпературного спалювання у ліцензованих підрядників, якщо переробка неможлива.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question-2">
+            Сировина, яку не приймаємо
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Це сировина, який не підлягає переробці або для обробки якого необхідне спеціалізоване обладнання та дозвільні документи.</p>
+        </div>
+      </div>  
+  </section>
+  <section class="sorting-table">
+    <h2 class="section-title">Ключові категорії сировини та їх розподіл</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Категорія сировини</th>
+          <th>Ліквідна сировина ♻️</th>
+          <th>Неліквідна сировина ⚡</th>
+          <th>Сировина, яку не приймаємо ⛔</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Макулатура</td>
+          <td>✔️ Картон, Книжки, Офісний папір А4, Журнали та газети</td>
+          <td>✔️ Упаковка Tetrapack, Паперові горнятка, Паперовий посуд, Зошити та альбоми</td>
+          <td>⛔ Серветки, Туалетний папір, Фольгований папір, Кальку та чеки, Пачки від цигарок, Фотографії та шпалери</td>
+        </tr>
+        <tr>
+          <td>Пластик</td>
+          <td>✔️ Прозорі пляшки від напоїв РЕТ01, Ємності, контейнери HDPE02</td>
+          <td>✔️ Ємності, контейнери PP05, Плівки високого тиску, термоусадка, стрейч, Пластикові вироби з металевими елементами</td>
+          <td>⛔ Гумові побутові вироби, Диски, платівки та касети, Пластикові пакети, Пакети з металевими елементами, Пластикові вироби з металевими елементами</td>
+        </tr>
+        <tr>
+          <td>Метал та скло</td>
+          <td>✔️ Алюмінієві банки, Скляні пляшки, банки</td>
+          <td>✔️ Жестяні банки, Металобрухт та склобій</td>
+          <td>⛔ Газові балони, аерозолі, Інші металеві та скляні вироби</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="faq-section">
+    <h2 class="section-title">Додаткові категорії сировини, яку ми не приймаємо</h2>
+    <div class="faq-container">
+        <!-- Засоби гігієни та догляду -->
+        <div class="faq-item">
+          <button class="faq-question-2">
+            Засоби гігієни та догляду
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Ми не приймаємо взагалі:</p>
+            <ul>
+              <li>Серветки.</li>
+              <li>Косметику.</li>
+              <li>Туалетний папір та паперові рушники.</li>
+              <li>Використані засоби особистої гігієни (памперси, прокладки, тампони тощо)</li>
+              <li>Все, що контактувало з рідинами тіла (кров’ю, сечею, слиною, виділеннями).</li>
+            </ul>
+          </div>
+        </div>
+      
+        <!-- Медичні відходи -->
+        <div class="faq-item">
+          <button class="faq-question-2">
+            Медичні відходи
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Ми не приймаємо взагалі:</p>
+            <ul>
+              <li>Медичні маски.</li>
+              <li>Залишки лікарських засобів.</li>
+              <li>Фармацевтичні відходи.</li>
+            </ul>
+          </div>
+        </div>
+      
+        <!-- Електроприлади -->
+        <div class="faq-item">
+          <button class="faq-question-2">
+            Електроприлади
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Ми не приймаємо взагалі:</p>
+            <ul>
+              <li>Шнури, зарядні пристрої.</li>
+              <li>Побутові електроприлади.</li>
+              <li>Комп'ютерну техніку та аксесуари.</li>
+              <li>Інші види електроприладів.</li>
+            </ul>
+          </div>
+        </div>
+      
+        <!-- Небезпечні відходи -->
+        <div class="faq-item">
+          <button class="faq-question-2">
+            Небезпечні відходи
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Ми не приймаємо взагалі:</p>
+            <ul>
+              <li>Термометри.</li>
+              <li>Картриджі для принтерів.</li>
+              <li>Батарейки та акумулятори.</li>
+              <li>Недопалки та засоби для паління.</li>
+              <li>Вибухонебезпечні предмети.</li>
+              <li>Лампи та прибори освітлення.</li>
+            </ul>
+          </div>
+        </div>
+      
+        <!-- Посуд та крихкі вироби -->
+        <div class="faq-item">
+          <button class="faq-question-2">
+            Посуд та крихкі вироби
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Ми не приймаємо взагалі:</p>
+            <ul>
+              <li>Вази.</li>
+              <li>Фарфор.</li>
+              <li>Кераміку.</li>
+              <li>Дзеркала.</li>
+              <li>Побутовий посуд.</li>
+              <li>Посуд для випікання.</li>
+            </ul>
+          </div>
+        </div>
+      
+        <!-- Будівельне сміття та старі меблі -->
+        <div class="faq-item">
+          <button class="faq-question-2">
+            Будівельне сміття та старі меблі
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Ми не приймаємо взагалі:</p>
+            <ul>
+              <li>Шпалери.</li>
+              <li>Лаки, фарби та контейнери від них.</li>
+              <li>Профілі, направляючі.</li>
+              <li>Деревину, OSB, фанеру, шпон, ДСП.</li>
+              <li>Старі меблі.</li>
+            </ul>
+          </div>
+        </div>
+      
+        <!-- Певні категорії дитячих іграшок -->
+        <div class="faq-item">
+          <button class="faq-question-2">
+            Певні категорії дитячих іграшок
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Ми не приймаємо взагалі:</p>
+            <ul>
+              <li>Бісер.</li>
+              <li>Слайми, пластилін, глину, кінетичний пісок.</li>
+              <li>Габаритні пластикові вироби, гірки, стільці, столи, дитячий транспорт, пластикові елементи автомобілів.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+      <div class="footer-logo">
+          <a href="index.html"><img src="/img/slides/logo_prozrach.png" alt="BinGreen Logo"></a>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-title">Про нас</h3>
+        <ul class="footer-list">
+            <li><a href="history.html">Історія</a></li>
+            <li><a href="pictures.html">Стратегія</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="tg-bot.html">Телеграм-бот</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3 class="footer-title">Закупівля</h3>
+        <ul class="footer-list">
+            <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+            <li><a href="what.html">Що ми приймаємо</a></li>
+            <li><a href="question.html">Питання та відповіді</a></li>
+
+        </ul>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-title">Контакти</h3>
+      <div class="footer-contacts">
+        <p><a href="tel:+380993505353" class="contact-link">+38 (099) 350-53-53</a></p>
+        <p><a href="tel:+380983505353" class="contact-link">+38 (098) 350-53-53</a></p>
+        <p><a href="tel:+380733505353" class="contact-link">+38 (073) 350-53-53</a></p>
+        <p><a href="mailto:bingreenua53@gmail.com" class="contact-link">bingreenua53@gmail.com</a></p>
+        <p><a href="https://www.google.com/maps?q=вулиця+Богуна,+6,+Нікополь" target="_blank" class="contact-link">
+          вулиця Богуна, 6, Нікополь
+      </a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=м.+Нікополь,Марганець,Покров,Україна" target="_blank" class="contact-link">
+            м. Нікополь, Марганець, Покров, Україна
+        </a></p>
+    </div>
+        
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61563220245958&mibextid=wwXIfr&rdid=THVLzDF8ZNkzgwss&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1YLa7XBRcP%2F%3Fmibextid%3DwwXIfr" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/bingreen.ua/" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-viber"></i></a>
+      <a href="mailto:bingreenua53@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+  </div>
+      </div>
+  </div>
+  <div class="footer-separator"></div> <!-- line-->
+  <div class="footer-bottom">
+      <p>&copy; 2024 BinGreen. Всі права захищені.</p>
+  </div>
+</footer>  
+  <script>
+    // Navigation
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+
+  if (window.scrollY > 50) {
+    navbar.style.background = "rgba(255, 255, 255, 0.699)"; // Используем #5cba49 с прозрачностью
+    navbar.style.borderRadius = "100px";
+    navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.4)";
+    navbar.style.padding = "10px 20px";
+    navbar.style.transition = "all 0.3s ease";
+  } else {
+    navbar.style.background = "transparent"; // Прозрачный фон
+    navbar.style.borderRadius = "0";
+    navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.3)";
+    navbar.style.padding = "20px 20px";
+    navbar.style.transition = "all 0.3s ease";
+  }
+});
+    document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    const question1 = item.querySelector(".faq-question-1");
+    const question2 = item.querySelector(".faq-question-2");
+
+    const toggleActiveState = () => {
+      // Закрыть все остальные элементы
+      faqItems.forEach((el) => {
+        if (el !== item) el.classList.remove("active");
+      });
+
+      item.classList.toggle("active");
+    };
+
+    if (question) {
+      question.addEventListener("click", toggleActiveState);
+    } 
+   if (question1) {
+      question1.addEventListener("click", toggleActiveState);
+    }
+
+    if (question2) {
+      question2.addEventListener("click", toggleActiveState);
+    }
+  });
+});
+
+  </script>
+</body>
+</html>

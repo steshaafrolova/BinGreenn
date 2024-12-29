@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+     <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIN GREEN</title>
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script> 
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="libs/btn/anim-menu-btn.min.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="js/class.js" defer></script>
+  <style>
+/* Общий стиль для страницы продукта */
+.product-page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 200px; 
+  margin-top: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+body {
+  margin: 0;
+  font-family: "Jost", sans-serif;
+  background-color: #f9f9f9;
+  padding-top: 130px;
+}
+
+.product-image {
+  width: 50%;
+  max-width: 500px;
+}
+
+.product-image img {
+  width: 100%;     
+  height: 400px;          
+  max-width: 500px;       
+  object-fit: contain;   
+  filter: brightness(100%);
+  padding: 0;   
+  border-radius: 8px;       
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  .product-image img {
+    max-width: 100%; 
+    height: auto;     
+  }
+}
+
+.product-image img:hover {
+  filter: brightness(60%); 
+}
+/* Правый блок описание и выбор размера */
+.product-details {
+  width: 50%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Описание продукта */
+.product-description {
+  font-size: 1.2em;
+  color: green;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Выбор размера */
+.product-size-selector {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 5px; 
+  margin: 15px 0;
+}
+
+
+.size-label {
+  font-family: inherit; 
+  font-size: 18px; 
+  color: green; 
+  font-weight: bold; 
+  margin-bottom: 5px; 
+}
+
+
+.size-dropdown {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: 2px solid green;
+  border-radius: 8px;
+  background-color: #a99999;
+  color: green;
+  appearance: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+
+.size-dropdown:focus {
+  outline: none;
+  box-shadow: 0 0 6px green;
+}
+
+
+.size-dropdown:hover {
+  background-color: green;
+  color: #a99999;
+}
+
+@media (min-width: 769px) {
+  .size-label {
+    font-size: 20px;
+  }
+  .size-dropdown {
+    font-size: 20px;
+    padding: 15px 20px;
+    width: auto;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .size-label {
+    font-size: 16px;
+  }
+  .size-dropdown {
+    font-size: 14px;
+    padding: 8px 12px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-page {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .product-image, .product-details {
+    width: 100%;
+  }
+
+  .product-title {
+    font-size: 1.8em;
+  }
+
+  .product-description {
+    font-size: 1em;
+  }
+
+  .size-dropdown {
+    font-size: 0.9em;
+  }
+}
+/* Общий стиль страницы продукта */
+.product-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+/* Левый блок с изображениями */
+.product-image-wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Главное изображение */
+.main-image {
+  position: relative;
+  width: 150%; /* Увеличено с 80% до 90% */
+  max-width: 1000px; /* Увеличено с 600px до 800px */
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main-image:hover img {
+  transform: scale(1.05);
+}
+
+.main-image:hover .nav-arrow {
+  opacity: 1;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/* Миниатюры */
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.1);
+}
+
+/* Правый блок с описанием */
+.product-details {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-size-selector {
+  margin: 15px 0;
+}
+
+.size-label {
+  font-family: inherit;
+  font-size: 18px;
+  color: green;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.product-size-selector {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.size-dropdown {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.info-links {
+  display: flex;
+  align-items: center;
+}
+
+.info-link {
+  font-size: 14px;
+  color: green;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.info-link:hover {
+  text-decoration: underline;
+  color:green
+  ;
+}
+
+.info-link:last-child {
+  margin-right: 0;
+}
+.size-dropdown {
+  font-size: 16px;
+  padding: 10px 15px;
+  border: 2px solid green;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: green;
+  width: 100%;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+  .product-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image-wrapper, .product-details {
+    width: 100%;
+  }
+
+  .main-image {
+    max-width: 100%;
+  }
+
+  .product-title {
+    font-size: 1.8em;
+  }
+
+  .product-description {
+    font-size: 1em;
+  }
+
+  .size-dropdown {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+/* Стили для ссылок */
+.link-large {
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: green; 
+  }
+
+  .info-link {
+    position: relative;
+    color: green; 
+  }
+
+.modal-content {
+  background-color: white; 
+  color:green; 
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal-header {
+  background-color:green;
+  color: white; 
+  font-weight: bold;
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+  color: green;
+}
+
+h1, h2, .modal-title {
+  color: #f9f9f9;  
+  text-shadow: 1px 1px 2px green; 
+}
+.title {
+  color: green;
+  font-weight: bold;
+}
+ul li a {
+  color: green; 
+  
+  text-decoration: none;
+  position: relative;
+}
+
+ul li a:hover {
+  text-decoration: none;
+}
+
+ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: green;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+ul li a:hover::after {
+  transform: scaleX(1);
+}
+.link-large.info-link {
+  color: green; 
+  text-decoration: none;
+}
+.link-large.info-link:hover {
+  color:#a99999;
+  text-decoration: none;
+}
+.product-info {
+  display: flex; 
+  align-items: center; 
+  gap: 30px; 
+}
+
+.product-price {
+  font-size: 30px; 
+  font-weight: 600; 
+  color: green; 
+}
+
+.product-size-selector label {
+  margin-right: 10px;
+}
+
+.product-options {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.product-size-selector {
+  flex: 1; 
+}
+
+.product-description-details {
+  flex: 1; 
+}
+
+.toggle-description {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: green; 
+  background-color: #f9f9f9; 
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-description:hover {
+  background-color: #222222;
+  transform: scale(1.05);
+}
+.description-list li {
+  color: green; 
+  font-size: 16px; 
+  font-weight: bold; 
+  margin-bottom: 8px;
+  padding: 8px 12px; 
+  background-color: #f9f9f9;
+  border-radius: 10px; 
+}
+
+/* Основной стиль для кнопок и поля ввода */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.quantity-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+/* Стиль для заголовка и описания */
+.product-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.product-title {
+    font-size: 24px;
+    color: green;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.main-image {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Центрируем изображение */
+    align-items: flex-start; /* Смещаем изображение ниже */
+    overflow: hidden;
+    width: 100%; /* Изображение растягивается на всю ширину контейнера */
+    margin-top: 50px; /* Добавляем отступ сверху, чтобы сместить изображение ниже */
+}
+
+.main-image img {
+    width: 100%; /* Увеличиваем изображение на всю ширину контейнера */
+    max-width: none; /* Убираем ограничение ширины */
+    height: auto; /* Сохраняем пропорции */
+    transform: translateY(20px); /* Смещаем изображение вниз */
+    transition: transform 0.3s ease; /* Плавный переход для анимации */
+}
+
+.main-image:hover img {
+    transform: scale(1.2) translateY(30px); /* Увеличиваем изображение при наведении */
+}
+
+@media (max-width: 768px) {
+    .main-image img {
+        width: 90%; /* Для планшетов изображение чуть меньше */
+        transform: translateY(10px); /* Меньшее смещение вниз */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-image img {
+        width: 100%; /* На мобильных устройствах изображение занимает всю ширину */
+        transform: translateY(5px); /* Минимальное смещение вниз */
+    }
+}
+
+</style>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <img src="html/img/slides/logo_prozrach.png" alt="Logo" />
+          </a>
+        </div>
+
+   <!-- Navigation -->
+<nav class="nav" id="nav">
+  <ul class="nav-items">
+    <li class="nav-item">
+      <a href="index.html">Головна</a> 
+    </li>
+    <li class="nav-item">
+      <a href="#">
+        Про нас
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="history.html">Історія</a></li>
+            <li><a href="pictures.html">Стратегія</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#about">
+        Закупівля
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+            <li><a href="question.html">Питання та відповіді</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#services">
+        Стати партнером
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="what.html">Що приймаємо?</a></li>
+            <li><a href="risheny.html">Рішення для організацій</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#services">
+        Контакти
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="#">Адреса та контакти</a></li>
+            <li><a href="tg-bot.html">Telegram-Бот</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="blog.html">Блог</a>
+    </li>
+  </ul>
+
+  <!-- social-icons and Telegram button container -->
+  <div class="social-icons-container">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/bingreen.ua/" target="_blank" class="icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" target="_blank" class="icon">
+        <i class="fab fa-telegram"></i>
+      </a>
+      <a href="mailto:example@mail.com" target="_blank" class="icon">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv" target="_blank" class="icon">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.whatsapp.com" target="_blank" class="icon">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1YLa7XBRcP/?mibextid=wwXIfr" target="_blank" class="icon">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+<a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" target="_blank" class="learn-more-btn-v">
+  <i class="fab fa-telegram"></i> Наш Telegram-Бот
+</a>
+  </div>
+</nav>
+
+        <!-- Mobile menu (burger) -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop">↑</button>  
+    <div class="image-row">
+        
+        </div>
+      </div>
+      
+    <!--header-->
+
+    <div class="product-page">
+        <!-- Левый блок: изображение с миниатюрами -->
+        <div class="gallery-wrapper">
+          <!-- Главное изображение -->
+          <div class="main-image">
+            <a data-fancybox="gallery" href="img/buy/himiy.jpg">
+              <img src="/img/buy/himiy.jpg" alt="banka" />
+            </a>
+          </div>
+          <!-- Миниатюры -->
+          <div class="thumbnails">
+            <a data-fancybox="gallery" href="/img/buy/himiy.jpg" class="thumbnail active">
+              <img src="/img/buy/himiy.jpg" alt="Миниатюра 1" />
+            </a>
+          </div>
+        </div>
+      
+        <!-- Правый блок: описание и детали -->
+        <div class="product-details">
+          <!-- Заголовок -->
+          <h2 class="product-title"> Флакон хімія</h2>
+          <p class="product-description">
+            <span class="highlighted-text">
+                Флакон хімія — це тара для зберігання хімічних продуктів, таких як засоби для прибирання, косметика, ліки чи інші хімічні рідини. Флакони можуть бути пластиковими або скляними.
+<br><br>
+                Переробка: флакони очищають від залишків хімікатів, після чого матеріали переробляють. Пластикові флакони переплавляються для виготовлення нових пластикових виробів, а скляні — переплавляються для створення нового скла.
+            </span>
+            <br><br>
+            <strong>Хочете продати свою вторсировину? Це стало ще простіше! Натискайте "Продати" і потрапляйте до нашого Telegram-бота, який допоможе вам на кожному етапі.
+
+                У бота ви зможете замовити вивіз прямо з дому чи офісу, дізнатися про найближчі пункти прийому та переглянути перелік прийнятих матеріалів. Весь процес займає кілька хвилин, а бот працює 24/7, щоб зробити здачу вторсировини швидкою та зручною.
+                
+                Натискайте "Продати" та долучайтеся до екологічної ініціативи! 🌍♻️</strong>
+          </p>
+          <div class="product-info-wrapper">
+            <div class="product-info">
+              <div class="product-price">
+                <span id="price-display">від 0,5 </span> грн
+              </div>
+              <div class="product-size-selector">
+                <label for="size" class="size-label">Стан відвантаження</label>
+                <select id="size" class="size-dropdown">
+                  <option value="default" data-price="130 000">Обрати</option>
+                  <option value="small" data-price="139 000">Насипом</option>
+                    <option value="small" data-price="150 000"> В мішках</option>
+                    <option value="small" data-price="150 000"> В коробках</option>
+                    <option value="small" data-price="150 000"> Інше</option>
+                </select>
+              </div>
+              <a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" target="_blank" class="learn-more-btn">Продати</a>
+            </div>
+              </div>
+              <div class="product-size-selector">
+                <label for="size" class="size-label">Кількість:</label>
+                <div class="quantity-selector">
+                  <button class="quantity-btn" id="decrease-btn">-</button>
+                  <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="10">
+                  <button class="quantity-btn" id="increase-btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+         <!-- footer -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <a href="index.html"><img src="/img/slides/logo_prozrach.png" alt="BinGreen Logo"></a>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Про нас</h3>
+          <ul class="footer-list">
+              <li><a href="#faq-section">Історія</a></li>
+              <li><a href="pictures.html">Стратегія</a></li>
+              <li><a href="blog.html">Блог</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3 class="footer-title">Закупівля</h3>
+          <ul class="footer-list">
+              <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+              <li><a href="what.html">Що ми приймаємо</a></li>
+              <li><a href="question.html">Питання та відповіді</a></li>
+
+          </ul>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-title">Контакти</h3>
+        <div class="footer-contacts">
+          <p><a href="tel:+380993505353" class="contact-link">+38 (099) 350-53-53</a></p>
+          <p><a href="tel:+380983505353" class="contact-link">+38 (098) 350-53-53</a></p>
+          <p><a href="tel:+380733505353" class="contact-link">+38 (073) 350-53-53</a></p>
+          <p><a href="mailto:bingreenua53@gmail.com" class="contact-link">bingreenua53@gmail.com</a></p>
+          <p><a href="https://www.google.com/maps?q=вулиця+Богуна,+6,+Нікополь" target="_blank" class="contact-link">
+            вулиця Богуна, 6, Нікополь
+        </a></p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=м.+Нікополь,Марганець,Покров,Україна" target="_blank" class="contact-link">
+              м. Нікополь, Марганець, Покров, Україна
+          </a></p>
+      </div>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61563220245958&mibextid=wwXIfr&rdid=THVLzDF8ZNkzgwss&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1YLa7XBRcP%2F%3Fmibextid%3DwwXIfr" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/bingreen.ua/" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-viber"></i></a>
+          <a href="#" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+      </div>
+        </div>
+    </div>
+    <div class="footer-separator"></div> <!-- line-->
+    <div class="footer-bottom">
+        <p>&copy; 2024 BinGreen. Всі права захищені.</p>
+    </div>
+  </footer>
+      <script>
+        document.getElementById('increase-btn').addEventListener('click', function() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  quantityInput.value = currentValue + 1;
+});
+
+document.getElementById('decrease-btn').addEventListener('click', function() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (currentValue > 1) {
+    quantityInput.value = currentValue - 1;
+  }
+});
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+     <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BinGreen</title>
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="libs/btn/anim-menu-btn.min.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="main.css" />
+  <script src="app.js" defer></script>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <img src="html/img/slides/logo_prozrach.png" alt="Logo" />
+          </a>
+        </div>
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <ul class="nav-items">
+    <li class="nav-item">
+      <a href="index.html" class="active">Головна</a> 
+    </li>
+    <li class="nav-item">
+      <a href="#">
+        Про нас
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="history.html">Історія</a></li>
+            <li><a href="pictures.html">Стратегія</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#about">
+        Закупівля
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+            <li><a href="question.html">Питання та відповіді</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#services">
+        Стати партнером
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="what.html">Що приймаємо?</a></li>
+            <li><a href="risheny.html">Рішення для організацій</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#services">
+        Контакти
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="adress.html">Адреса та контакти</a></li>
+            <li><a href="tg-bot.html">Telegram-Бот</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="blog.html">Блог</a>
+    </li>
+  </ul>
+
+  <!-- social-icons and Telegram button container -->
+  <div class="social-icons-container">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/bingreen.ua/" target="_blank" class="icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" target="_blank" class="icon">
+        <i class="fab fa-telegram"></i>
+      </a>
+      <a href="mailto:bingreenua53@gmail.com" target="_blank" class="icon">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv" target="_blank" class="icon">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.whatsapp.com" target="_blank" class="icon">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1YLa7XBRcP/?mibextid=wwXIfr" target="_blank" class="icon">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+<a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" target="_blank" class="learn-more-btn-v">
+  <i class="fab fa-telegram"></i> Наш Telegram-Бот
+</a>
+  </div>
+</nav>
+
+        <!-- Mobile menu (burger) -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <!-- Стрелка "наверх" -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <!-- new video-->
+    <div class="wrapper">
+      <div class="content">
+        <div class="video-section">
+          <video autoplay muted loop id="background-video">
+            <source src="img/video/newvideo.mp4" type="video/mp4" />
+          </video>
+          <div class="video-overlay">
+            <div class="animated-container">
+              <div class="hero-section">
+                <h1 class="hero-title">
+                  <span class="changing-word" id="changing-word"></span>
+                  .Прийом вторсировини.
+                </h1>
+                <p class="text-block__x">
+                  BinGreen — більше, ніж прийом вторсировини.<br />
+                  Ми робимо процес здачі вторсировини простим і вигідним:
+                  приїжджаємо, забираємо, зважуємо та одразу платимо.<br />
+                  Сортуйте разом із нами й допомагайте створювати чисте майбутнє
+                  для планети.<br />
+                  Разом ми створюємо чистіше майбутнє.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- before video -->
+        <div class="portfolio">
+          <div class="container">
+            <main class="gallery">
+              <div data-speed=".9" class="gallery__left">
+                <div class="text-block gallery__item">
+                  <h2 class="text-block__h">Хто ми?</h2>
+                  <p class="text-block__p">
+                    Ми BinGreen — компанія, яка спрощує процес здачі
+                    вторсировини.
+                    <br />Ми забираємо, зважуємо та виплачуємо одразу,
+                    забезпечуючи зручність та вигоду для наших клієнтів.<br />
+                    Наша мета — створювати чистіше майбутнє для планети через
+                    інноваційні підходи до переробки.
+                  </p>
+                </div>
+                <div class="text-block gallery__item">
+                  <h2 class="text-block__h">Чому саме BinGreen?</h2>
+                  <p class="text-block__p">
+                    BinGreen — це сучасний підхід до екологічних рішень, де ваш
+                    комфорт і вигода стоять на першому місці. Ми забезпечуємо
+                    швидкість, простоту та прозорість у процесі здачі
+                    вторсировини, перетворюючи турботу про природу на вигідний
+                    вибір.<br />
+                    Разом із нами ви отримуєте не лише гроші, але й можливість
+                    долучитися до створення чистого майбутнього для нашої
+                    планети.
+                  </p>
+                </div>
+                <img class="gallery__item" />
+              </div>
+
+              <div data-speed="1.1" class="gallery__right">
+                <div class="text-block gallery__item">
+                  <h2 class="text-block__h">Наша концепція:</h2>
+                  <p class="text-block__p">
+                    Концепція BinGreen полягає в тому, щоб змінити ставлення до
+                    вторсировини, роблячи її збором не лише зручним, а й
+                    вигідним.<br />
+                    Ми сприяємо розвитку екологічно відповідального підходу,
+                    впроваджуючи інноваційні рішення для збереження планети та
+                    створення чистого майбутнього для всіх.
+                  </p>
+                </div>
+                <div data-speed="1.1" class="gallery__right">
+                  <div class="text-block gallery__item">
+                    <h2 class="text-block__h">В яких містах працюєте?</h2>
+                    <p class="text-block__p">
+                      BinGreen працює в містах Марганець, Нікополь та Покров, де
+                      ми забезпечуємо зручний та ефективний сервіс для збору
+                      вторсировини.<br />
+                      Ви можете бути впевнені, що процес буде простим і швидким:
+                      ми приїдемо, заберемо ваше сміття, зважимо і виплатимо
+                      гроші без зайвих зусиль з вашого боку. Ми прагнемо, щоб
+                      кожен мешканець цих міст мав можливість долучитися до
+                      екологічної ініціативи, роблячи свій внесок у чистоту
+                      навколишнього середовища.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+        <!-- scrolling -->
+        <div class="rotating-container">
+          <img
+            src="/img/images/scroll.png"
+            alt="Rotating Image"
+            class="rotating-image"
+            id="decor-scroll-rotate"
+            style="transform: rotate(0deg);"
+          />
+        </div>
+    <!-- Наші переваги -->
+<section class="recycling-section fade-in">
+  <h2 class="section-header">Наші переваги</h2>
+  <p class="section-description">
+    Ми робимо процес здачі вторсировини простим, зручним та вигідним для вас. Ось чому варто обрати нас!
+  </p>
+  <div class="icons-container">
+    <div class="icon-item">
+      <span class="material-icons">recycling</span>
+      <p>Збирай без зайвих турбот — без необхідності сортувати матеріали окремо.</p>
+    </div>
+    <div class="icon-item">
+      <span class="material-icons">home</span>
+      <p>Заберемо прямо від твого порогу — не потрібно їхати до нас, ми приїдемо до тебе!</p>
+    </div>
+    <div class="icon-item">
+      <span class="material-icons">local_shipping</span>
+      <p>Не потрібно турбуватися про пакування — ми приймаємо сировину без зайвих вимог.</p>
+    </div>
+    <div class="icon-item">
+      <span class="material-icons">chat_bubble</span>
+      <p>Швидке замовлення через телеграм-бота — все можна оформити в один клік!</p>
+    </div>
+    <div class="icon-item">
+      <span class="material-icons">speed</span>
+      <p>Зручність та швидкість — ми робимо процес здачі максимально швидким.</p>
+    </div>
+    <div class="icon-item">
+      <span class="material-icons">attach_money</span>
+      <p>Миттєва виплата — отримуй свою винагороду відразу після здачі сировини.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Разделительная линия -->
+<div class="section-divider"></div>
+
+<!-- Для бізнесу та приватних осіб -->
+<div class="forwhat fade-in">
+  <div class="container d-flex flex-row flex-wrap">
+    <!-- Для бізнесу -->
+    <div class="col-md-6 col-lg-6 d-flex block">
+      <div class="top">
+        <span class="material-icons">business</span>
+        <h2>ДЛЯ БІЗНЕСУ</h2>
+      </div>
+      <div class="bottom">
+        <p>Ми пропонуємо комплексні рішення для бізнесу, щоб оптимізувати процеси збору та утилізації вторинної сировини. Працюємо з різними галузями та підприємствами, надаючи індивідуальний підхід та високий рівень сервісу. Ми допомагаємо зменшити витрати на утилізацію та забезпечити екологічну відповідальність вашого бізнесу.</p>
+      </div>
+    </div>
+    <!-- Для приватних осіб -->
+    <div class="col-md-6 col-lg-6 d-flex block">
+      <div class="top">
+        <span class="material-icons">person</span>
+        <h2>ДЛЯ ПРИВАТНИХ ОСІБ</h2>
+      </div>
+      <div class="bottom">
+        <p>Кожен може зробити свій внесок у збереження природи! Пропонуємо зручний та доступний сервіс збору та переробки вторинної сировини прямо з вашого дому. Підтримуємо екологічні ініціативи та проводимо освітні акції для розвитку свідомості серед населення.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="services-section fade-in">
+  <h2 class="section-header">Наші послуги</h2>
+  <div class="services-container">
+    <!-- Утилізація -->
+    <div class="service-card">
+      <div class="service-content">
+        <img src="img/images/logo(1).png" alt="Утилізація" class="service-image">
+        <div class="service-info">
+          <h3>Утилізація</h3>
+          <p>Ми перетворюємо відходи на цінні ресурси, забезпечуючи їх правильне перероблення та збереження природи</p>
+          <a href="ytulizacia.html" class="learn-more-btn">Дізнатись більше</a>
+
+        </div>
+      </div>
+    </div>
+    <!-- Пункти прийому -->
+    <div class="service-card fade-in">
+      <div class="service-content">
+        <img src="/img/images/logo(2).png" alt="Пункти прийому" class="service-image">
+        <div class="service-info">
+          <h3>Пункти прийому</h3>
+          <p>Розвиваємо власну мережу пунктів прийому вторсировини </p>
+          <a href="punkty.html" class="learn-more-btn">Дізнатись більше</a>
+        </div>
+      </div>
+    </div>
+    <!-- Роздільний збір -->
+    <div class="service-card fade-in">
+      <div class="service-content">
+        <img src="/img/images/logo(3).png" alt="Роздільний збір" class="service-image">
+        <div class="service-info">
+          <h3>Роздільний збір</h3>
+          <p>Навчаємо сортувати правильно та забезпечуємо всі умови для екологічного збору сировини</p>
+           <a href="rozdilzbir.html" class="learn-more-btn">Дізнатись більше</a>
+        </div>
+      </div>
+    </div>
+    <!-- Аутсорсинг -->
+    <div class="service-card fade-in">
+      <div class="service-content">
+        <img src="/img/images/logo(4).png" alt="Аутсорсинг" class="service-image">
+        <div class="service-info">
+          <h3>Аутсорсинг</h3>
+          <p>Комплексні рішення для бізнесу: від збору до переробки — ми беремо на себе всю екологічну відповідальність вашої компанії</p>
+           <a href="aut.html" class="learn-more-btn">Дізнатись більше</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+       <!-- New Mission Section -->
+<section class="stats-section fade-in">
+  <h2 class="stats-header">Чому вже варто почати турбуватися?</h2>
+  <p class="stats-subheader">
+    Переробка — це важливий крок до збереження екології, зменшення забруднення та економії природних ресурсів. Ось чому це так важливо!
+  </p>
+  <div class="stats-container">
+    <div class="stat-item">
+      <h3 class="stat-value">16 МЛН ТН</h3>
+      <p class="stat-description">
+        Щорічно в Україні утворюється велика кількість твердих побутових відходів, обсяги яких зростають.
+      </p>
+    </div>
+    <div class="stat-item">
+      <h3 class="stat-value">3 %</h3>
+      <p class="stat-description">
+        Лише частина твердих побутових відходів піддається переробці, решта залишається в навколишньому середовищі.
+      </p>
+    </div>
+    <div class="stat-item">
+      <h3 class="stat-value">35 ТИС</h3>
+      <p class="stat-description">
+        На території України існує велика кількість стихійних, неконтрольованих та незаконних сміттєзвалищ.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- New Material Purchase Section -->
+<section class="stats-section fade-in">
+  <h2 class="stats-header">Ми закуповуємо сировину!</h2>
+  <p class="stats-subheader">
+    Ми закуповуємо папір, пластик, плівку та метал за наявності мінімального обсягу відсортованої фракції. Приєднуйтесь до нас та зробимо переробку разом!
+  </p>
+  <div class="stats-container">
+    <div class="stat-item">
+      <div class="stat-image-container">
+        <img src="/img/images/makul2.webp" alt="Папір" class="stat-image">
+        <img src="/img/images/makulatura.jpeg" alt="Папір" class="stat-image-hover">
+      </div>
+      <h3 class="stat-value">Папір</h3>
+      <p class="stat-description">
+        Ми приймаємо відсортований папір у великих обсягах для переробки та повторного використання.
+      </p>
+      <a href="whitepaper.html">
+        <!-- button more information -->
+        <button class="learn-more-btn">Більше інформації</button>
+      </a> 
+    </div>
+    <div class="stat-item">
+      <div class="stat-image-container">
+        <img src="img/images/plastik1.webp" alt="Пластик" class="stat-image">
+        <img src="img/images/plastik2.webp" alt="Пластик" class="stat-image-hover">
+      </div>
+      <h3 class="stat-value">Пластик</h3>
+      <p class="stat-description">
+        Пластикові відходи після сортування та очищення можуть бути використані для створення нових продуктів.
+      </p>
+      <a href="botles.html">
+        <!-- button more information -->
+        <button class="learn-more-btn">Більше інформації</button>
+      </a> 
+    </div>
+    <div class="stat-item">
+      <div class="stat-image-container">
+        <img src="/img/images/metallchik.jpg" alt="Метал" class="stat-image">
+        <img src="/img/images/metal2.jpg" alt="Метал" class="stat-image-hover">
+      </div>
+      <h3 class="stat-value">Метал</h3>
+      <p class="stat-description">
+        Ми закуповуємо метал для переробки, що дозволяє значно зменшити навантаження на природні ресурси.
+      </p>
+      <a href="banka.html">
+        <!-- button more information -->
+        <button class="learn-more-btn">Більше інформації</button>
+      </a>  
+    </div>
+  </div>
+  <!-- Button for scrolling -->
+  <a href="prodaty.html" class="scroll-button">Дізнатися більше</a>
+</section>
+<!-- Swiper Slider -->
+<div class="swiper slider fade-in">
+  <div class="slider-ui">
+    <div class="container header-wrapper">
+      <div class="header-content">
+        <div class="header-content__slide active">
+          <h1 class="letters">Вступай</h1>
+          <div class="header-content__info">
+            <p></p>
+          </div>
+        </div>
+        <div class="header-content__slide">
+          <h1 class="letters">До</h1>
+          <div class="header-content__info">
+            <p></p>
+          </div>
+        </div>
+        <div class="header-content__slide">
+          <h1 class="letters">BinGreen</h1>
+          <div class="header-content__info">
+            <p></p>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Swiper Slides -->
+  <div class="swiper-wrapper">
+    <div class="swiper-slide slider__item">
+      <div
+        class="slider__layer"
+        data-swiper-parallax="35%"
+        style="background-image: url('img/slides/trees.jpg');"
+      ></div>
+      <div
+        class="slider__layer"
+        data-swiper-parallax="25%"
+        style="background-image: url('img/slides/centertrees.png');"
+      ></div>
+      <div
+        class="slider__layer"
+        data-swiper-parallax="14%"
+        style="background-image: url('img/slides/bocktreees.png');"
+      ></div>
+    </div>
+    <div class="swiper-slide slider__item">
+      <div
+        class="slider__layer"
+        data-swiper-parallax="35%"
+        style="background-image: url('img/slides/slide-2-layer-back.jpg');"
+      ></div>
+      <div
+        class="slider__layer"
+        data-swiper-parallax="25%"
+        style="background-image: url('img/slides/slide-2-layer-middle.png');"
+      ></div>
+      <div
+        class="slider__layer"
+        data-swiper-parallax="14%"
+        style="background-image: url('img/slides/slide-2-layer-front.png');"
+      ></div>
+    </div>
+    <div class="swiper-slide slider__item">
+      <div
+        class="slider__layer"
+        data-swiper-parallax="35%"
+        style="background-image: url('img/slides/slide-3-layer-back.jpg');"
+      ></div>
+      <div
+        class="slider__layer"
+        data-swiper-parallax="25%"
+        style="background-image: url('img/slides/slide-3-layer-middle.png');"
+      ></div>
+      <div
+        class="slider__layer"
+        data-swiper-parallax="14%"
+        style="background-image: url('img/slides/slide-3-layer-front.png');"
+      ></div>
+    </div>
+  </div>
+</div>
+<!-- questions -->
+<section class="faq-section">
+  <h2 class="faq-header">Залишились питання?</h2>
+  <p class="stats-subheader">
+    Відповіді чекають вас нижче
+  </p>
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">
+        Що таке переробка? 
+        <span class="faq-icon"></span>
+      </button>
+      <div class="faq-answer">
+        <p>Переробка — це процес повторного використання матеріалів для створення нових продуктів.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Чи оплачуються здаті матеріали?
+        <span class="faq-icon"></span>
+      </button>
+      <div class="faq-answer">
+        <p>Так, ми платимо за більшість видів вторинної сировини, залежно від її кількості та якості.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Які матеріали приймаються? 
+        <span class="faq-icon"></span>
+      </button>
+      <div class="faq-answer">
+        <p>Ми приймаємо папір, пластик, метал та інші види відходів, придатних для переробки.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Який мінімальний обсяг для здачі?
+        <span class="faq-icon"></span>
+      </button>
+      <div class="faq-answer">
+        <p>Для деяких видів матеріалів є мінімальний обсяг, але ми приймаємо сировину навіть в малих кількостях, особливо для окремих категорій, таких як папір.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Що станеться з моєю сировиною після здачі?
+        <span class="faq-icon"></span>
+      </button>
+      <div class="faq-answer">
+        <p> Ваша сировина буде направлена на переробку, де її використовуватимуть для створення нових продуктів, що допоможе зменшити використання природних ресурсів.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Чи можливо здати сировину безкоштовно?
+        <span class="faq-icon"></span>
+      </button>
+      <div class="faq-answer">
+        <p> Так, ми приймаємо сировину безкоштовно для деяких видів матеріалів або в рамках екологічних ініціатив.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Як дізнатися, скільки я отримаю за свою сировину?
+        <span class="faq-icon"></span>
+      </button>
+      <div class="faq-answer">
+        <p>Ми надаємо орієнтовні ціни на сировину на нашому сайті, а точну суму можемо визначити після оцінки матеріалів.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        В яких містах доступний ваш сервіс?
+        <span class="faq-icon"></span>
+      </button>
+      <div class="faq-answer">
+        <p>Наразі сервіс BinGreen доступний в містах Нікополь, Марганець та Покров</p>
+      </div>
+    </div>
+    <a href="question.html">
+      <button class="scroll-button">Більше відповідей на ваші питання</button>
+    </a>
+</section>
+<h2 class="stats-header-blog">
+  Наш блог
+  <a href="blog.html" class="arrow-link">➤</a>
+</h2>
+
+<p class="stats-subheader">Зробимо світ чистішим разом! Читайте про важливість вторсировини та як вона допомагає зберегти ресурси планети.</p>
+<div class="scroll-container-wrapper">
+  <button class="scroll-button-left">&#8592;</button>
+<!-- 1 blog page -->
+  <div class="scroll-container fade-in">
+    <a href="1page.html" class="scroll-item">
+      <img src="/img/images/pererabotka-makulatu.jpg" alt="Публікація 1" class="scroll-item-img">
+      <div class="scroll-item-description">
+        <h3>Як вторсировина може змінити майбутнє: відходи, що приносять користь</h3>
+        <p>Як переробка відходів може змінити наше майбутнє, перетворюючи їх на корисні ресурси.</p>
+        <p class="article-date">Дата: 20.12.2024</p>
+      </div>
+    </a>
+<!-- 2 blog page -->
+    <a href="page2.html" class="scroll-item">
+      <img src="/img/images/bb.jpg" alt="Публікація 2" class="scroll-item-img">
+      <div class="scroll-item-description">
+        <h3>5 найкращих способів переробки пластикових відходів у нові продукти</h3>
+        <p>Дізнайтеся про 5 найкращих способів переробки пластикових відходів і їх перетворення в корисні товари.</p>
+        <p class="article-date">Дата: 21.12.2024</p>
+      </div>
+    </a>
+<!-- 3 blog page -->
+    <a href="page3.html" class="scroll-item">
+      <img src="/blogimg/page3/64947a520229194a8bd71906_NORBA001.jpg" alt="Публікація 3" class="scroll-item-img">
+      <div class="scroll-item-description">
+        <h3>NORBA</h3>
+        <p>Український бренд спідньої білизни, який випустив лінійку купальників з переробленого морського пластику. Тканина має італійське походження, а самі вироби відшиваються в Україні. </p>
+        <p class="article-date">Дата: 21.12.2024</p>
+      </div>
+    </a>
+   <!-- 4 blog page -->
+    <a href="snikers.html" class="scroll-item">
+      <img src="/img/images/crossy.jpg" alt="Публікація 3" class="scroll-item-img">
+      <div class="scroll-item-description">
+        <h3>Переробка вторсировини та створення екологічних кросівок</h3>
+        <p>Як відходи стають модними трендами.</p>
+        <p class="article-date">Дата: 01.01.2024</p>
+      </div>
+    </a>
+     <!-- 5 blog page -->
+    <a href="page5.html" class="scroll-item">
+      <img src="/img/images/sychasnyi.jpg" alt="Публікація 3" class="scroll-item-img">
+      <div class="scroll-item-description">
+        <h3>Екологічні інновації у переробці: як новітні технології змінюють індустрію вторсировини</h3>
+        <p>Як нові технології у переробці відходів відкривають нові можливості для бізнесу та екології.</p>
+        <p class="article-date">Дата: 22.12.2024</p>
+      </div>
+    </a>
+<!-- 6 blog page -->
+    <a href="page6.html" class="scroll-item">
+      <img src="/img/images/electroni.jpg" alt="Публікація 3" class="scroll-item-img">
+      <div class="scroll-item-description">
+        <h3>Переробка електронних відходів: виклики та можливості для сучасних технологій</h3>
+        <p>Як переробка електронних відходів відкриває нові можливості для технологій та охорони навколишнього середовища.</p>
+        <p class="article-date">Дата: 27.12.2024</p>
+      </div>
+    </a>
+<!-- 7 blog page -->
+    <a href="page7.html" class="scroll-item">
+      <img src="/img/images/recycl.jpg" alt="Публікація 3" class="scroll-item-img">
+      <div class="scroll-item-description">
+        <h3>10 фактів про вторсировину, які змінять ваше ставлення до відходів</h3>
+        <p>10 фактів про вторсировину, які змінять ваше ставлення до відходів і їх цінності.</p>
+        <p class="article-date">Дата: 28.12.2024</p>
+      </div>
+    </a>
+<!-- 8 blog page -->
+    <a href="page8.html" class="scroll-item">
+      <img src="/img/images/pricol.jpg" alt="Публікація 3" class="scroll-item-img">
+      <div class="scroll-item-description">
+        <h3>Кругова економіка: чому переробка вторсировини має бути пріоритетом для бізнесу</h3>
+        <p>Чому переробка вторсировини повинна стати пріоритетом для бізнес-стратегій у рамках кругової економіки.</p>
+        <p class="article-date">Дата: 28.12.2024</p>
+      </div>
+    </a>
+<!-- 9 blog page -->
+    <a href="page9.html" class="scroll-item">
+      <img src="/img/images/building.webp" alt="Публікація 3" class="scroll-item-img">
+      <div class="scroll-item-description">
+        <h3>Вторсировина у будівництві: переваги використання перероблених матеріалів</h3>
+        <p>Перероблені матеріали у будівництві: як вони допомагають заощаджувати ресурси та зменшувати шкоду для природи.</p>
+        <p class="article-date">Дата: 28.12.2024</p>
+      </div>
+    </a>
+  </div>
+  <a href="blog.html">
+    <!-- button more information -->
+    <button class="scroll-button-1">Більше інформації</button>
+  </a>  
+  <button class="scroll-button-right">&#8594;</button>
+</div>
+<!-- footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+      <div class="footer-logo">
+          <a href="index.html"><img src="/img/slides/logo_prozrach.png" alt="BinGreen Logo"></a>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-title">Про нас</h3>
+        <ul class="footer-list">
+            <li><a href="history.html">Історія</a></li>
+            <li><a href="pictures.html">Стратегія</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="tg-bot.html">Телеграм-бот</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3 class="footer-title">Закупівля</h3>
+        <ul class="footer-list">
+            <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+            <li><a href="what.html">Що ми приймаємо</a></li>
+            <li><a href="question.html">Питання та відповіді</a></li>
+
+        </ul>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-title">Контакти</h3>
+      <div class="footer-contacts">
+        <p><a href="tel:+380993505353" class="contact-link">+38 (099) 350-53-53</a></p>
+        <p><a href="tel:+380983505353" class="contact-link">+38 (098) 350-53-53</a></p>
+        <p><a href="tel:+380733505353" class="contact-link">+38 (073) 350-53-53</a></p>
+        <p><a href="mailto:bingreenua53@gmail.com" class="contact-link">bingreenua53@gmail.com</a></p>
+        <p><a href="https://www.google.com/maps?q=вулиця+Богуна,+6,+Нікополь" target="_blank" class="contact-link">
+          вулиця Богуна, 6, Нікополь
+      </a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=м.+Нікополь,Марганець,Покров,Україна" target="_blank" class="contact-link">
+            м. Нікополь, Марганець, Покров, Україна
+        </a></p>
+    </div>
+        
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61563220245958&mibextid=wwXIfr&rdid=THVLzDF8ZNkzgwss&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1YLa7XBRcP%2F%3Fmibextid%3DwwXIfr" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/bingreen.ua/" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-viber"></i></a>
+      <a href="mailto:bingreenua53@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+  </div>
+      </div>
+  </div>
+  <div class="footer-separator"></div> <!-- line-->
+  <div class="footer-bottom">
+      <p>&copy; 2024 BinGreen. Всі права захищені.</p>
+  </div>
+</footer>
+
+    <script>
+      const words = ["BINGREEN", "Це круто", "Врятуй планету"];
+
+      const wordElement = document.getElementById("changing-word");
+
+      let currentWordIndex = 0;
+
+      // Функция смены слова
+      function changeWord() {
+        wordElement.textContent = words[currentWordIndex];
+
+        currentWordIndex = (currentWordIndex + 1) % words.length;
+      }
+      changeWord();
+      setInterval(changeWord, 6000);
+     
+  document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+
+      question.addEventListener("click", () => {
+        // Закрыть все остальные
+        faqItems.forEach((el) => {
+          if (el !== item) el.classList.remove("active");
+        });
+
+        // Переключить текущий
+        item.classList.toggle("active");
+      });
+    });
+  });
+    </script>
+  </body>
+</html>

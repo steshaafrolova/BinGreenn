@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+     <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BinGreen</title>
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script> 
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="libs/btn/anim-menu-btn.min.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+<style>
+    .blog-header {
+  position: relative;
+  background-image: url('img/images/nav-photoaidcom-darken.jpeg'); 
+  background-size: cover;
+  background-position: center top; 
+  background-repeat: no-repeat; 
+  padding: 80px 20px;
+  color: white; 
+  text-align: center;
+}
+
+.blog-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 1; 
+}
+
+.blog-header h2,
+.blog-header p {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.blog-section {
+  margin-top: 40px; 
+}
+
+.blog-header h2 {
+    color: white;
+  font-size: 3em; 
+  margin: 0; 
+  z-index: 2; 
+}
+
+.blog-header p {
+    color: white;
+  font-size: 1.2em; 
+  z-index: 2; 
+}
+
+.blog-section {
+  margin-top: 40px; 
+}
+body {
+  margin: 0;
+  font-family: "Jost", sans-serif;
+  padding-top: 120px; 
+}
+.navbar {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  z-index: 1000; 
+  padding: 20px;
+}
+
+/* Навигационные ссылки */
+.navbar .nav-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+}
+.step-section__title {
+    animation: fadeIn 0.6s ease-out forwards;
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #4CAF50;
+  text-align: center;
+}
+.step-section {
+  text-align: center;
+  margin: 60px 0;
+  padding: 0 20px;
+}
+
+.step-section__title_mini {
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.text-block__p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.step-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.step-section {
+  text-align: center;
+  margin: 60px 0;
+  padding: 0 20px;
+}
+
+.step-section__title_mini {
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.text-block__p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.step-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.step-section {
+  text-align: center;
+  margin: 60px 0;
+  padding: 0 20px;
+}
+
+.step-section__title_mini {
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.text-block__p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.step-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.step-card {
+    animation: fadeIn 0.6s ease-out forwards;
+  background-color: #f4f4f4;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.step-card__content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.step-card__title {
+    animation: fadeIn 0.6s ease-out forwards;
+  font-family: "Jost", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.step-card__description {
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.step-card__line {
+  border: none;
+  height: 1px;
+  background-color: #4CAF50;
+  margin: 15px 0;
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+}
+
+.step-card:hover .step-card__description {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.step-card:hover .step-card__title {
+  transform: translateY(-10px);
+}
+
+.step-card:hover .step-card__line {
+  opacity: 1; 
+}
+
+@media (max-width: 768px) {
+  .step-section__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-card {
+    height: auto;
+    margin: 10px 0;
+  }
+}
+.faq-question-2 {
+  font-family: "Jost", sans-serif;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 15px;
+  text-align: left;
+  font-size: 30px; 
+  font-weight: 500;
+  color: #4CAF50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.stats-header-blog {
+  color: white;
+}
+.faq-answer {
+  font-size: 1.2rem;
+  animation: fadeIn 0.6s ease-out forwards;
+  line-height: 1.6; 
+}
+
+.faq-answer p {
+    color: #333;
+  font-weight: bold;
+}
+
+.faq-answer ul {
+    color: #333;
+  list-style-type: disc;
+  margin-left: 20px; 
+}
+
+.faq-answer li {
+    color: #333;
+  margin-bottom: 10px;
+}
+.text-block__h {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: #5cba49;
+    text-align: center;}
+
+.advantages-section {
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 48px; 
+  font-weight: bold;
+  animation: fadeIn 0.6s ease-out forwards;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 20px; 
+  margin-bottom: 40px;
+  color: #555;
+}
+
+
+.advantages-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Каждый элемент списка */
+.advantage-item {
+  display: flex;
+  align-items: center;
+  font-size: 24px; 
+  font-weight: bold;
+  color: #333;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.6s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.advantage-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.advantage-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.advantage-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.advantage-item:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.advantage-icon {
+  color: #32CD32; 
+  margin-right: 20px; 
+  font-size: 40px; 
+  line-height: 1;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Основные стили */
+.stats-section {
+  background-color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.stats-header {
+  font-size: 2.5rem;
+  color: green;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.stats-subheader {
+  font-size: 1.2rem;
+  color: green;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Добавлено для листания */
+}
+
+.stat-item {
+  position: relative;
+  width: 30%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  margin-bottom: 20px; /* Пустое пространство между карточками */
+}
+
+.stat-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stat-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.stat-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.stat-image-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.stat-item:hover .stat-image {
+  opacity: 0;
+}
+
+.stat-item:hover .stat-image-hover {
+  opacity: 1;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+
+.sorting-rules {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.sorting-rules__title {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 32px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; /* Добавим, чтобы шаги не выходили за пределы на маленьких экранах */
+}
+
+.step {
+    flex: 1;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 300px; /* Ограничиваем ширину шага */
+    margin: 10px;
+}
+
+.step__circle {
+    display: inline-block;
+    background-color: #4CAF50;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+
+.step__title {
+    color: #32CD32;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.step__description {
+    font-size: 16px;
+    color: #555;
+    margin-top: 15px;
+}
+@media (max-width: 768px) {
+  .navbar .nav-items {
+    flex-direction: column; /* Переключаем навигацию в колонку */
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .navbar {
+    padding: 10px;
+  }
+
+  .sorting-rules__title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .steps {
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .step {
+    flex: 1;
+    width: 100%; /* Делаем шаги более гибкими */
+    max-width: none; /* Убираем ограничение на ширину */
+    margin-bottom: 20px;
+  }
+
+  .step__circle {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+
+  .step__title {
+    font-size: 1.5rem;
+  }
+
+  .step__description {
+    font-size: 1rem;
+  }
+
+  .step-section__grid {
+    grid-template-columns: 1fr; /* На мобильных устройствах сетка в 1 колонку */
+    gap: 20px;
+  }
+
+  .step-card {
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .step-card__title {
+    font-size: 1.2rem;
+  }
+
+  .step-card__description {
+    font-size: 0.9rem;
+  }
+}
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px; /* Размер круга увеличен до 120px */
+    height: 120px; /* Размер круга увеличен до 120px */
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-icon img {
+    width: 100px; /* Размер изображения увеличен до 100px */
+    height: 100px; /* Размер изображения увеличен до 100px */
+    object-fit: contain;
+}
+
+.feature-icon:hover {
+    transform: translateY(-10px) scale(1.15); /* Эффект увеличения на 15% при наведении */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+</style>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="js/class.js" defer></script>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <img src="html/img/slides/logo_prozrach.png" alt="Logo" />
+        </a>
+      </div>
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <ul class="nav-items">
+    <li class="nav-item">
+      <a href="index.html" class="active">Головна</a> 
+    </li>
+    <li class="nav-item">
+      <a href="#">
+        Про нас
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="history.html">Історія</a></li>
+            <li><a href="pictures.html">Стратегія</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#about">
+        Закупівля
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+            <li><a href="question.html">Питання та відповіді</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#services">
+        Стати партнером
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="what.html">Що приймаємо?</a></li>
+            <li><a href="risheny.html">Рішення для організацій</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#services">
+        Контакти
+        <span class="arrow"></span>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-card">
+          <ul>
+            <li><a href="adress.html">Адреса та контакти</a></li>
+            <li><a href="tg-bot.html">Telegram-Бот</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="blog.html">Блог</a>
+    </li>
+  </ul>
+
+  <!-- social-icons and Telegram button container -->
+  <div class="social-icons-container">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/bingreen.ua/" target="_blank" class="icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" target="_blank" class="icon">
+        <i class="fab fa-telegram"></i>
+      </a>
+      <a href="mailto:example@mail.com" target="_blank" class="icon">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv" target="_blank" class="icon">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.whatsapp.com" target="_blank" class="icon">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1YLa7XBRcP/?mibextid=wwXIfr" target="_blank" class="icon">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+<a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" target="_blank" class="learn-more-btn-v">
+  <i class="fab fa-telegram"></i> Наш Telegram-Бот
+</a>
+  </div>
+</nav>
+
+      <!-- Mobile menu (burger) -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+  <!-- Стрелка "наверх" -->
+  <button class="back-to-top" id="backToTop">↑</button>
+<!-- questions -->
+<div class="blog-header">
+    <h2 class="stats-header-blog">
+       Наш Telegram-Бот
+    </h2>
+  </div>
+</section>
+
+<section class="step-section">
+    <h2 class="text-block__h">Познайомтеся з нашим Telegram-ботом для зручного управління вторсировиною </h2>
+    <p class="text-block__p">
+        Ми раді представити вам нашого інноваційного Telegram-бота! Це ваш надійний помічник, який зробить процес сортування та здачі вторсировини простим, зручним і приємним. Розкажемо детальніше, чому варто почати використовувати наш бот вже сьогодні.
+    </p>
+    <a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" target="_blank" class="learn-more-btn">Перейти до Telegram-Бота</a>
+    <h2 class="text-block__h">Що може наш бот?</h2>
+    <div class="step-section__grid">
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title">Замовлення вивозу вторсировини</h3>
+          <hr class="step-card__line">
+          <p class="step-card__description">Забудьте про складнощі організації транспорту! Завдяки боту ви можете замовити вивіз прямо до вашого дому чи офісу. Усе, що вам потрібно — кілька кліків для заповнення анкети.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title">Перелік пунктів прийому</h3>
+          <hr class="step-card__line">
+          <p class="step-card__description">Не знаєте, куди здати вторсировину? Наш бот підкаже найближчі пункти прийому, покаже їх розташування на карті, графік роботи та перелік матеріалів, які приймаються.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title">Консультації в режимі реального часу</h3>
+          <hr class="step-card__line">
+          <p class="step-card__description">Маєте питання? Наш бот працює 24/7! Отримайте швидкі відповіді або звертайтесь до нашого менеджера через бот.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title">Візуалізація на карті</h3>
+          <hr class="step-card__line">
+          <p class="step-card__description">Отримайте адреси пунктів прийому з детальним розташуванням на карті. Вам більше не доведеться шукати самостійно.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title">Простий процес замовлення вивозу</h3>
+          <hr class="step-card__line">
+          <p class="step-card__description">Хочете позбутися вторсировини без зайвих клопотів? Замовте вивіз у кілька кліків — вкажіть деталі, а решту ми зробимо самі.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-card__content">
+          <h3 class="step-card__title"> Можливість залишити відгук</h3>
+          <hr class="step-card__line">
+          <p class="step-card__description">Ваш досвід для нас важливий! Поділіться враженнями, щоб допомогти нам стати ще кращими!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="faq-section">
+    <h2 class="text-block__h">Чому саме наш бот?</h2>
+    <p class="text-block__p">
+        Ми пропонуємо широкий набір опцій для житлово-екплуатаційних компаній, бізнесу та організацій, які доволять швидко започаткувати роздільний збір сміття
+    </p>
+                <section class="advantages-section">
+                    <div class="advantages-list">
+                        <div class="advantage-item">
+                            <span class="advantage-icon">&#10003;</span>
+                            <p><strong>Зручність використання.</strong>Не потрібно завантажувати додаткові додатки чи шукати складні інструкції. Бот працює у Telegram, який є у кожного, і доступний 24/7.</p>
+                        </div>
+                        <div class="advantage-item">
+                            <span class="advantage-icon">&#10003;</span>
+                            <p> Економія часу.
+                                Усього кілька хвилин — і ваше замовлення оформлено. Ви не витрачаєте час на дзвінки чи пошуки інформації.</p>
+                        </div>
+                        <div class="advantage-item">
+                            <span class="advantage-icon">&#10003;</span>
+                            <p>Індивідуальний підхід.
+                                Бот запам’ятовує ваші попередні запити, щоб зробити кожну наступну взаємодію ще швидшою та комфортнішою.</p>
+                        </div>
+                        <div class="advantage-item">
+                            <span class="advantage-icon">&#10003;</span>
+                            <p>прияння екологічному майбутньому.
+                                Використовуючи наш бот, ви долучаєтесь до екологічної ініціативи з сортування та переробки відходів.</p>
+                        </div>
+                        <div class="advantage-item">
+                            <span class="advantage-icon">&#10003;</span>
+                            <p>Простий і зрозумілий інтерфейс.
+                                Навіть якщо ви вперше використовуєте Telegram-бота, наш зрозумілий дизайн зробить цей досвід легким і приємним.</p>
+                        </div>
+                    </div>
+                </section>   
+              </div>   
+        </div>
+    </div>
+  </section>
+  <section class="sorting-rules">
+    <h1 class="sorting-rules__title">Чому це так просто?<br>
+        починається з 3 базових правил</h1>
+    <div class="steps">
+      <div class="step">
+        <div class="step__circle">1</div>
+        <h2 class="step__title">Зручність</h2>
+        <p class="step__description">
+            Все відбувається у Telegram, де вам не потрібно завантажувати додаткові додатки.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step__circle">2</div>
+        <h2 class="step__title">Швидкість</h2>
+        <p class="step__description">
+            Оформлення заявки займає лише кілька хвилин.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step__circle">3</div>
+        <h2 class="step__title">Доступність</h2>
+        <p class="step__description">
+            Ви можете скористатися ботом у будь-який час і в будь-якому місці.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="faq-section">
+    <h2 class="text-block__h">Чому саме наш бот?</h2>
+    <p class="text-block__p">
+        Ми пропонуємо широкий набір опцій для житлово-екплуатаційних компаній, бізнесу та організацій, які доволять швидко започаткувати роздільний збір сміття
+    </p>
+    <section class="advantages-section">
+      <div class="advantages-list">
+          <div class="advantage-item">
+              <span class="feature-icon">
+                  <img src="img/images/logo(7).png" alt="Економія часу" />
+              </span>
+              <p>Цілодобовий доступ — бот завжди поруч, коли вам це потрібно.</p>
+          </div>
+          <div class="advantage-item">
+              <span class="feature-icon">
+                  <img src="img/images/logo(6).png" alt="Індивідуальний підхід" />
+              </span>
+              <p>Еко-орієнтованість — зручний інструмент для тих, хто хоче зробити світ чистішим.</p>
+          </div>
+          <div class="advantage-item">
+              <span class="feature-icon">
+                  <img src="img/images/logo(9).png" alt="Сприяння екологічному майбутньому" />
+              </span>
+              <p>Мобільність — доступ до всіх послуг прямо зі смартфона.</p>
+          </div>
+          <div class="advantage-item">
+              <span class="feature-icon">
+                  <img src="img/images/logo(8).png" alt="Простий і зрозумілий інтерфейс" />
+              </span>
+              <p> Швидкий зворотній зв’язок — жодних очікувань чи зайвих дій.</p>
+          </div>
+      </div>
+  </section>
+  <h2 class="text-block__h">Приєднуйтесь до еко-ініціативи разом із нами! </h2>
+  <p class="text-block__p">
+    Наш Telegram-бот створений, щоб зробити сортування та здачу вторсировини максимально комфортними для кожного.
+    Завдяки сучасним технологіям, ми допомагаємо зберегти довкілля, економимо ваш час і ресурси.
+  </p>
+  <section class="advantages-section">
+    <div class="advantages-list">
+        <div class="advantage-item">
+            <span class="feature-icon">
+                <img src="img/images/logo(10).png" alt="Економія часу" />
+            </span>
+            <p>Почніть вже зараз — натисніть на кнопку нижче та зробіть свій внесок у чисте майбутнє разом із нами! </p>
+            <span class="feature-icon">
+              <img src="img/images/logo(12).png" alt="Економія часу" />
+          </span>
+        </div>
+        <a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" target="_blank" class="learn-more-btn">Перейти до Telegram-Бота</a>
+        <div class="advantage-item">
+            <span class="feature-icon">
+                <img src="img/images/logo(11).png" alt="Простий і зрозумілий інтерфейс" />
+            </span>
+            <p> Разом до екологічного майбутнього!</p>
+            <span class="feature-icon">
+              <img src="img/images/logo(3).png" alt="Простий і зрозумілий інтерфейс" />
+          </span>
+        </div>
+    </div>
+</section>
+</section>
+
+ <!-- footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+      <div class="footer-logo">
+          <a href="index.html"><img src="/img/slides/logo_prozrach.png" alt="BinGreen Logo"></a>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-title">Про нас</h3>
+        <ul class="footer-list">
+            <li><a href="history.html">Історія</a></li>
+            <li><a href="pictures.html">Стратегія</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="tg-bot.html">Телеграм-бот</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3 class="footer-title">Закупівля</h3>
+        <ul class="footer-list">
+            <li><a href="prodaty.html">Закупівля вторсировини</a></li>
+            <li><a href="what.html">Що ми приймаємо</a></li>
+            <li><a href="question.html">Питання та відповіді</a></li>
+
+        </ul>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-title">Контакти</h3>
+      <div class="footer-contacts">
+        <p><a href="tel:+380993505353" class="contact-link">+38 (099) 350-53-53</a></p>
+        <p><a href="tel:+380983505353" class="contact-link">+38 (098) 350-53-53</a></p>
+        <p><a href="tel:+380733505353" class="contact-link">+38 (073) 350-53-53</a></p>
+        <p><a href="mailto:bingreenua53@gmail.com" class="contact-link">bingreenua53@gmail.com</a></p>
+        <p><a href="https://www.google.com/maps?q=вулиця+Богуна,+6,+Нікополь" target="_blank" class="contact-link">
+          вулиця Богуна, 6, Нікополь
+      </a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=м.+Нікополь,Марганець,Покров,Україна" target="_blank" class="contact-link">
+            м. Нікополь, Марганець, Покров, Україна
+        </a></p>
+    </div>
+        
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61563220245958&mibextid=wwXIfr&rdid=THVLzDF8ZNkzgwss&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1YLa7XBRcP%2F%3Fmibextid%3DwwXIfr" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@bingreen.ua?_t=8sN1c03dikv" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/bingreen.ua/" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/Bin_Green_ua_bot?start=ZGw6MjQ2MzM4" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-viber"></i></a>
+      <a href="mailto:bingreenua53@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+  </div>
+      </div>
+  </div>
+  <div class="footer-separator"></div> <!-- line-->
+  <div class="footer-bottom">
+      <p>&copy; 2024 BinGreen. Всі права захищені.</p>
+  </div>
+</footer>
+  <script>
+    // Navigation
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+
+  if (window.scrollY > 50) {
+    navbar.style.background = "rgba(255, 255, 255, 0.699)"; // Используем #5cba49 с прозрачностью
+    navbar.style.borderRadius = "100px";
+    navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.4)";
+    navbar.style.padding = "10px 20px";
+    navbar.style.transition = "all 0.3s ease";
+  } else {
+    navbar.style.background = "transparent"; // Прозрачный фон
+    navbar.style.borderRadius = "0";
+    navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.3)";
+    navbar.style.padding = "20px 20px";
+    navbar.style.transition = "all 0.3s ease";
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    const question1 = item.querySelector(".faq-question-1");
+    const question2 = item.querySelector(".faq-question-2");
+
+    const toggleActiveState = () => {
+      // Закрыть все остальные элементы
+      faqItems.forEach((el) => {
+        if (el !== item) el.classList.remove("active");
+      });
+
+      item.classList.toggle("active");
+    };
+
+    if (question) {
+      question.addEventListener("click", toggleActiveState);
+    } 
+   if (question1) {
+      question1.addEventListener("click", toggleActiveState);
+    }
+
+    if (question2) {
+      question2.addEventListener("click", toggleActiveState);
+    }
+  });
+});
+
+  </script>
+</html>
